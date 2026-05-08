@@ -161,12 +161,17 @@
     margin-bottom: .9rem; line-height: 1.5;
   }
   .comp-item .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    margin-top: 7px; flex-shrink: 0;
+    display: block;
+    min-width: 8px; width: 8px;
+    min-height: 8px; height: 8px;
+    border-radius: 50%;
+    margin-top: 6px; flex-shrink: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .dot-good { background: #3ddc84; }
-  .dot-bad  { background: #ff4f4f; }
-  .dot-opp  { background: var(--pink); }
+  .dot-good { background-color: #3ddc84 !important; }
+  .dot-bad  { background-color: #ff4f4f !important; }
+  .dot-opp  { background-color: #db117a !important; }
   .comp-item span { color: var(--text); }
 
   /* ── INSIGHT ─────────────────────────────── */
