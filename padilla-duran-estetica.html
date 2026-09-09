@@ -3,342 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Padilla Durán Estética</title>
-<meta name="description" content="Medicina estética en Córdoba — reservá tu consulta en Padilla Durán Estética.">
+<title>Padilla Durán · Salud y Estética</title>
+<meta name="description" content="Salud y estética integral en Valle Escondido, Córdoba. Depilación definitiva, medicina estética, estética facial y corporal, osteopatía y masajes. Reservá tu turno.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500;0,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-  /* ============ TOKENS ============ */
+  /* ============ TOKENS (brand: sage green + warm cream) ============ */
   :root{
-    --blush-1:#FDF3F6;
-    --blush-2:#FCE8ED;
+    --cream-1:#FAF6EE;
+    --cream-2:#F4ECDE;
+    --cream-3:#ECE1CE;
+    --sand:#E5D8C2;
+    --taupe:#CDBFA8;
     --white:#ffffff;
-    --rose:#D46B95;
-    --rose-2:#E091AE;
-    --rose-deep:#C25680;
-    --rose-soft:#FBE4EC;
-    --plum:#3B1F2B;
-    --ink:#5C4852;
-    --muted:#927C87;
-    --line:rgba(59,31,43,.10);
-    --line-soft:rgba(59,31,43,.06);
+    --green:#3E5E48;
+    --green-2:#557A5E;
+    --green-3:#7E9C82;
+    --green-soft:#E7EDE1;
+    --ink:#454A40;
+    --muted:#7E7A6C;
+    --line:rgba(62,94,72,.15);
+    --line-soft:rgba(62,94,72,.08);
     --card:#ffffff;
-    --shadow-sm:0 4px 18px rgba(196,86,128,.10);
-    --shadow-md:0 18px 50px rgba(150,55,95,.14);
-    --shadow-lg:0 30px 70px rgba(120,40,80,.20);
-    --r-lg:24px;
-    --r-md:20px;
-    --r-sm:14px;
+    --shadow-sm:0 4px 18px rgba(62,94,72,.10);
+    --shadow-md:0 18px 48px rgba(50,72,55,.15);
+    --shadow-lg:0 30px 70px rgba(40,60,46,.22);
+    --r-lg:24px;--r-md:20px;--r-sm:14px;
     --maxw:1180px;
     --ease:cubic-bezier(.22,.61,.36,1);
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --blush-1:#1c1016;
-      --blush-2:#241119;
-      --white:#170c11;
-      --rose:#E091AE;
-      --rose-2:#EBA6BE;
-      --rose-deep:#E091AE;
-      --rose-soft:#3a2029;
-      --plum:#F7E9EE;
-      --ink:#D8C4CD;
-      --muted:#A88E99;
-      --line:rgba(255,230,238,.12);
-      --line-soft:rgba(255,230,238,.07);
-      --card:#20121a;
-      --shadow-sm:0 4px 18px rgba(0,0,0,.35);
-      --shadow-md:0 18px 50px rgba(0,0,0,.45);
-      --shadow-lg:0 30px 70px rgba(0,0,0,.55);
+      --cream-1:#12160F;--cream-2:#161c13;--cream-3:#1c2317;--sand:#232c1c;--taupe:#3c4831;
+      --white:#0f130c;--green:#AFC7A5;--green-2:#9FBE95;--green-3:#8AAD83;--green-soft:#232d1c;
+      --ink:#CBD3C1;--muted:#98A28A;
+      --line:rgba(200,222,190,.13);--line-soft:rgba(200,222,190,.07);--card:#151b11;
+      --shadow-sm:0 4px 18px rgba(0,0,0,.4);--shadow-md:0 18px 48px rgba(0,0,0,.5);--shadow-lg:0 30px 70px rgba(0,0,0,.6);
     }
   }
   :root[data-theme="dark"]{
-    --blush-1:#1c1016; --blush-2:#241119; --white:#170c11;
-    --rose:#E091AE; --rose-2:#EBA6BE; --rose-deep:#E091AE; --rose-soft:#3a2029;
-    --plum:#F7E9EE; --ink:#D8C4CD; --muted:#A88E99;
-    --line:rgba(255,230,238,.12); --line-soft:rgba(255,230,238,.07); --card:#20121a;
-    --shadow-sm:0 4px 18px rgba(0,0,0,.35); --shadow-md:0 18px 50px rgba(0,0,0,.45); --shadow-lg:0 30px 70px rgba(0,0,0,.55);
+    --cream-1:#12160F;--cream-2:#161c13;--cream-3:#1c2317;--sand:#232c1c;--taupe:#3c4831;
+    --white:#0f130c;--green:#AFC7A5;--green-2:#9FBE95;--green-3:#8AAD83;--green-soft:#232d1c;
+    --ink:#CBD3C1;--muted:#98A28A;
+    --line:rgba(200,222,190,.13);--line-soft:rgba(200,222,190,.07);--card:#151b11;
+    --shadow-sm:0 4px 18px rgba(0,0,0,.4);--shadow-md:0 18px 48px rgba(0,0,0,.5);--shadow-lg:0 30px 70px rgba(0,0,0,.6);
   }
 
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--blush-1);
-    color:var(--ink);
+    background:var(--cream-1);color:var(--ink);
     font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-    font-size:16px;line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--rose);color:#fff;}
-
+  ::selection{background:var(--green);color:#fff;}
   .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem);}
 
-  h1,h2,h3{color:var(--plum);font-weight:800;line-height:1.05;letter-spacing:-.02em;text-wrap:balance;}
-  .accent{
-    font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;
-    letter-spacing:0;font-variation-settings:"opsz" 140;
-  }
-  .grad-text{
-    background:linear-gradient(100deg,var(--rose) 0%,var(--rose-2) 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
+  h1,h2,h3{color:var(--green);font-weight:800;line-height:1.06;letter-spacing:-.02em;text-wrap:balance;}
+  .accent{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;}
+  .grad-text{background:linear-gradient(100deg,var(--green) 0%,var(--green-3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
-  /* ============ PILL / BADGE ============ */
-  .badge{
-    display:inline-flex;align-items:center;gap:.5em;
-    background:var(--rose-soft);color:var(--rose-deep);
-    font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    padding:.5em 1em;border-radius:999px;
-    border:1px solid rgba(196,86,128,.14);
-  }
-  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);}
+  /* ============ BADGE / PILL ============ */
+  .badge{display:inline-flex;align-items:center;gap:.5em;background:var(--green-soft);color:var(--green);
+    font-size:.73rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    padding:.5em 1em;border-radius:999px;border:1px solid rgba(62,94,72,.14);}
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green-2);}
 
   /* ============ BUTTONS ============ */
-  .btn{
-    display:inline-flex;align-items:center;gap:.7em;
-    font-family:inherit;font-weight:700;font-size:1rem;
-    padding:.62em .72em .62em 1.25em;
-    border-radius:999px;border:1.5px solid transparent;cursor:pointer;
-    transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s var(--ease),color .3s var(--ease);
-    white-space:nowrap;
-  }
-  .btn .ico{
-    width:34px;height:34px;flex:none;border-radius:50%;
-    display:grid;place-items:center;
-    transition:transform .4s var(--ease),background .3s var(--ease);
-  }
+  .btn{display:inline-flex;align-items:center;gap:.7em;font-family:inherit;font-weight:700;font-size:1rem;
+    padding:.62em .72em .62em 1.25em;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s;white-space:nowrap;}
+  .btn .ico{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;transition:transform .4s var(--ease),background .3s;}
   .btn .ico svg{width:15px;height:15px;transition:transform .4s var(--ease);}
-  .btn-primary{
-    background:linear-gradient(100deg,var(--rose) 0%,var(--rose-2) 100%);
-    color:#fff;box-shadow:var(--shadow-sm);
-  }
-  .btn-primary .ico{background:rgba(255,255,255,.92);color:var(--rose-deep);}
+  .btn-primary{background:linear-gradient(100deg,var(--green) 0%,var(--green-2) 100%);color:#fff;box-shadow:var(--shadow-sm);}
+  .btn-primary .ico{background:rgba(255,255,255,.92);color:var(--green);}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
   .btn-primary:hover .ico{transform:rotate(-20deg);}
   .btn-primary:hover .ico svg{transform:translateX(1px);}
-  .btn-ghost{
-    background:transparent;color:var(--plum);border-color:var(--line);
-  }
-  .btn-light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
-  .btn-light .ico{background:rgba(255,255,255,.2);color:#fff;}
+  .btn-ghost{background:transparent;color:var(--green);border-color:var(--line);}
+  .btn-ghost .ico{background:var(--green-soft);color:var(--green);}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--green-3);background:var(--green-soft);}
+  .btn-light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .btn-light .ico{background:rgba(255,255,255,.22);color:#fff;}
   .btn-light:hover{background:rgba(255,255,255,.24);transform:translateY(-3px);}
   .btn-light:hover .ico{transform:rotate(-20deg);}
   .btn-block{width:100%;justify-content:center;}
 
   /* ============ HEADER ============ */
-  header.site{
-    position:sticky;top:0;z-index:100;
-    background:color-mix(in srgb,var(--white) 88%,transparent);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--line-soft);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem;}
-  .brand{display:flex;align-items:center;gap:.62rem;font-weight:800;color:var(--plum);letter-spacing:-.01em;}
-  .brand .mark{
-    width:38px;height:38px;border-radius:50%;flex:none;
-    background:linear-gradient(135deg,var(--rose) 0%,var(--rose-2) 100%);
-    display:grid;place-items:center;color:#fff;font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;
-    box-shadow:var(--shadow-sm);
-  }
-  .brand b{font-size:1.06rem;line-height:1.05;}
-  .brand small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);}
+  header.site{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--cream-1) 88%,transparent);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:.68rem;color:var(--green);}
+  .brand .mark{width:42px;height:42px;flex:none;color:var(--green);}
+  .brand .mark svg{width:100%;height:100%;}
+  .brand .wm b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.32rem;line-height:.95;letter-spacing:.14em;color:var(--green);display:block;}
+  .brand .wm small{display:block;font-size:.56rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
   .nav-links{display:flex;gap:2rem;font-weight:600;font-size:.95rem;color:var(--ink);}
   .nav-links a{position:relative;padding:.2em 0;transition:color .25s;}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--rose);transition:width .3s var(--ease);border-radius:2px;}
-  .nav-links a:hover{color:var(--plum);}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--green-2);transition:width .3s var(--ease);border-radius:2px;}
+  .nav-links a:hover{color:var(--green);}
   .nav-links a:hover::after{width:100%;}
   .nav-cta{display:flex;align-items:center;gap:.4rem;}
   .btn-sm{padding:.5em .6em .5em 1.05em;font-size:.92rem;}
   .btn-sm .ico{width:28px;height:28px;}
-  .burger{display:none;background:none;border:1px solid var(--line);border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;}
-  .burger svg{width:20px;height:20px;color:var(--plum);}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;color:var(--green);}
+  .burger svg{width:20px;height:20px;}
+  .mnav{display:none;flex-direction:column;padding:.4rem 0 1rem;border-top:1px solid var(--line-soft);}
+  .mnav.open{display:flex;}
+  .mnav a{padding:.75em .2em;font-weight:600;color:var(--green);border-bottom:1px solid var(--line-soft);}
 
   /* ============ HERO ============ */
   .hero{padding:clamp(1rem,3vw,1.5rem) 0 clamp(2rem,5vw,3.5rem);}
-  .hero-card{
-    position:relative;border-radius:var(--r-lg);overflow:hidden;
-    min-height:clamp(520px,72vh,660px);
-    display:flex;align-items:flex-end;
-    box-shadow:var(--shadow-md);
-    isolation:isolate;
-  }
-  /* placeholder "foto" del hero */
-  .hero-photo{position:absolute;inset:0;z-index:-2;
-    background:
-      radial-gradient(120% 90% at 78% 18%, #f6c9d9 0%, #e69fb8 34%, #c9738f 62%, #7c4257 100%);
-  }
-  .hero-photo::after{content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(38% 46% at 66% 40%, rgba(255,248,250,.55), rgba(255,248,250,0) 70%),
-      radial-gradient(30% 34% at 30% 78%, rgba(120,50,72,.35), rgba(120,50,72,0) 70%);
-    mix-blend-mode:screen;opacity:.9;
-  }
-  .hero-overlay{position:absolute;inset:0;z-index:-1;
-    background:linear-gradient(90deg, rgba(45,18,28,.72) 0%, rgba(45,18,28,.5) 34%, rgba(45,18,28,.12) 62%, rgba(45,18,28,0) 100%);
-  }
-  .photo-tag{
-    position:absolute;top:16px;right:16px;z-index:2;
-    display:inline-flex;align-items:center;gap:.45em;
-    background:rgba(20,10,15,.42);color:#fff;
-    font-size:.68rem;font-weight:600;letter-spacing:.02em;
-    padding:.4em .7em;border-radius:999px;backdrop-filter:blur(4px);
-    border:1px solid rgba(255,255,255,.2);
-  }
-  .photo-tag svg{width:13px;height:13px;opacity:.9;}
-  .hero-content{position:relative;z-index:1;padding:clamp(1.6rem,4vw,3rem);max-width:660px;}
-  .hero-content .badge{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.32);backdrop-filter:blur(4px);}
-  .hero-content .badge .dot{background:#ffd3e2;}
-  .hero h1{color:#fff;font-size:clamp(2.5rem,6vw,4.15rem);margin:.7rem 0 .9rem;}
-  .hero h1 .accent{color:#ffe1ec;}
-  .hero p.lead{color:rgba(255,255,255,.9);font-size:clamp(1rem,1.6vw,1.16rem);max-width:34em;line-height:1.6;}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem;}
-  .social-proof{display:flex;align-items:center;gap:.85rem;margin-top:1.7rem;flex-wrap:wrap;}
+  .hero-card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(540px,74vh,680px);
+    display:flex;align-items:flex-end;box-shadow:var(--shadow-md);isolation:isolate;}
+  .hero-bg{position:absolute;inset:0;z-index:-3;background:radial-gradient(130% 120% at 80% 15%,#5c7e63 0%,#456a4e 40%,#31503b 72%,#26402f 100%);}
+  .hero-illus{position:absolute;right:-2%;bottom:-4%;z-index:-2;width:min(58%,620px);color:rgba(255,255,255,.5);pointer-events:none;}
+  .hero-illus svg{width:100%;height:auto;}
+  .hero-watermark{position:absolute;left:-6%;top:-12%;width:340px;color:rgba(255,255,255,.06);z-index:-2;pointer-events:none;}
+  .hero-watermark svg{width:100%;}
+  .hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(30,48,36,.86) 0%,rgba(32,50,38,.6) 38%,rgba(32,50,38,.12) 66%,rgba(32,50,38,0) 100%);}
+  .hero-content{position:relative;z-index:1;padding:clamp(1.6rem,4vw,3.2rem);max-width:660px;}
+  .hero-content .badge{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.32);}
+  .hero-content .badge .dot{background:#d7e7cf;}
+  .hero h1{color:#fff;font-size:clamp(2.5rem,6vw,4.15rem);margin:.7rem 0 .95rem;}
+  .hero h1 .accent{color:#e6f0dd;}
+  .hero p.lead{color:rgba(255,255,255,.9);font-size:clamp(1rem,1.6vw,1.16rem);max-width:35em;line-height:1.6;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem;}
+  .social-proof{display:flex;align-items:center;gap:.85rem;margin-top:1.8rem;flex-wrap:wrap;}
   .avatars{display:flex;}
-  .avatars span{
-    width:40px;height:40px;border-radius:50%;margin-left:-12px;border:2.5px solid rgba(255,255,255,.85);
-    background-size:cover;box-shadow:0 2px 8px rgba(0,0,0,.2);
-  }
+  .avatars span{width:40px;height:40px;border-radius:50%;margin-left:-12px;border:2.5px solid rgba(255,255,255,.9);background-size:cover;box-shadow:0 2px 8px rgba(0,0,0,.25);}
   .avatars span:first-child{margin-left:0;}
-  .av1{background:radial-gradient(circle at 40% 35%,#ffd9c2,#e59b7d);}
-  .av2{background:radial-gradient(circle at 40% 35%,#f7cbdb,#d98aa6);}
-  .av3{background:radial-gradient(circle at 40% 35%,#e7cdb6,#c69b78);}
-  .av4{background:radial-gradient(circle at 40% 35%,#f3d2c4,#cf9b8c);}
+  .av1{background:radial-gradient(circle at 40% 35%,#e7ddc8,#c7b79a);}
+  .av2{background:radial-gradient(circle at 40% 35%,#cfe0c6,#94b394);}
+  .av3{background:radial-gradient(circle at 40% 35%,#e0d3bd,#b7a888);}
+  .av4{background:radial-gradient(circle at 40% 35%,#d3e2cb,#a0bb9f);}
   .social-proof .sp-text{color:#fff;font-size:.92rem;line-height:1.3;}
   .social-proof .sp-text b{font-weight:800;}
-  .social-proof .stars{color:#ffd25e;letter-spacing:1px;font-size:.82rem;}
+  .social-proof .stars{color:#f0d99a;letter-spacing:1px;font-size:.82rem;}
 
-  /* strip de badges */
-  .trust-strip{
-    display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:center;
-    margin-top:1.4rem;padding:1.1rem clamp(1rem,3vw,1.6rem);
-    background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-md);
-    box-shadow:var(--shadow-sm);
-  }
-  .trust-item{display:flex;align-items:center;gap:.55rem;font-size:.9rem;font-weight:600;color:var(--plum);}
-  .trust-item svg{width:20px;height:20px;color:var(--rose);flex:none;}
+  .trust-strip{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:center;margin-top:1.4rem;
+    padding:1.1rem clamp(1rem,3vw,1.6rem);background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-md);box-shadow:var(--shadow-sm);}
+  .trust-item{display:flex;align-items:center;gap:.55rem;font-size:.9rem;font-weight:600;color:var(--green);}
+  .trust-item svg{width:20px;height:20px;color:var(--green-2);flex:none;}
   .trust-sep{width:1px;align-self:stretch;background:var(--line);}
 
   /* ============ SECTIONS ============ */
   section.block{padding:clamp(3rem,7vw,5.5rem) 0;}
-  .tint{background:linear-gradient(180deg,var(--blush-1) 0%,var(--blush-2) 100%);}
+  .tint{background:linear-gradient(180deg,var(--cream-1) 0%,var(--cream-3) 100%);}
   .sec-head{max-width:640px;margin:0 auto 2.6rem;text-align:center;}
-  .sec-head.left{margin-left:0;text-align:left;}
+  .sec-head.left{margin:0 0 2.2rem;text-align:left;}
   .sec-head h2{font-size:clamp(2rem,4.4vw,3rem);margin:.85rem 0 .7rem;}
   .sec-head p{color:var(--ink);font-size:1.05rem;}
 
-  /* ---- Servicios ---- */
-  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
-  .svc{
-    position:relative;border-radius:var(--r-md);overflow:hidden;min-height:380px;
-    display:flex;flex-direction:column;justify-content:flex-end;
-    box-shadow:var(--shadow-sm);isolation:isolate;
-    transition:transform .45s var(--ease),box-shadow .45s var(--ease);
-  }
+  /* illustration panel */
+  .illus{position:relative;background:linear-gradient(160deg,var(--green-soft) 0%,var(--sand) 120%);display:grid;place-items:center;overflow:hidden;}
+  .illus>svg{width:74%;height:auto;color:var(--green);}
+  .illus .leafwm{position:absolute;right:-8%;bottom:-14%;width:44%;color:var(--green-3);opacity:.16;}
+
+  /* ---- Servicios (6) ---- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+  .svc{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);
+    transition:transform .45s var(--ease),box-shadow .45s var(--ease);display:flex;flex-direction:column;}
   .svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
-  .svc-photo{position:absolute;inset:0;z-index:-2;}
-  .svc:nth-child(1) .svc-photo{background:radial-gradient(120% 100% at 30% 20%,#f7cede,#dd94b0 55%,#9a5470 100%);}
-  .svc:nth-child(2) .svc-photo{background:radial-gradient(120% 100% at 70% 25%,#f3d9c9,#d99f9e 55%,#8a5563 100%);}
-  .svc:nth-child(3) .svc-photo{background:radial-gradient(120% 100% at 40% 30%,#ecd2ea,#c58bbb 55%,#79486f 100%);}
-  .svc:nth-child(4) .svc-photo{background:radial-gradient(120% 100% at 60% 20%,#f7d2d5,#dc99a4 55%,#8f5560 100%);}
-  .svc-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(40% 40% at 50% 30%,rgba(255,255,255,.35),transparent 70%);mix-blend-mode:screen;}
-  .svc-grad{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(40,16,26,0) 30%,rgba(40,16,26,.28) 55%,rgba(30,10,18,.86) 100%);}
-  .svc .photo-tag{top:12px;left:12px;right:auto;}
-  .svc-body{padding:1.4rem;}
-  .svc-num{font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:.3rem;}
-  .svc-body h3{color:#fff;font-size:1.28rem;margin-bottom:.35rem;}
-  .svc-body p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.45;}
-  .svc-link{display:inline-flex;align-items:center;gap:.4em;margin-top:.9rem;color:#ffd9e6;font-weight:700;font-size:.85rem;}
+  .svc .illus{aspect-ratio:16/10;}
+  .svc:hover .illus>svg{transform:scale(1.05) rotate(-1deg);}
+  .svc .illus>svg{transition:transform .5s var(--ease);}
+  .svc-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1;}
+  .svc-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:var(--green-3);font-size:1.05rem;margin-bottom:.15rem;}
+  .svc-body h3{font-size:1.28rem;margin-bottom:.4rem;}
+  .svc-body p{color:var(--ink);font-size:.93rem;line-height:1.5;}
+  .svc-link{display:inline-flex;align-items:center;gap:.4em;margin-top:auto;padding-top:1rem;color:var(--green-2);font-weight:700;font-size:.86rem;}
   .svc-link svg{width:16px;height:16px;transition:transform .3s var(--ease);}
   .svc:hover .svc-link svg{transform:translateX(4px);}
 
   /* ---- Resultados ---- */
   .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-  .result{background:var(--card);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line-soft);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+  .result{background:var(--card);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line-soft);transition:transform .4s var(--ease),box-shadow .4s;}
   .result:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
-  .ba{position:relative;display:grid;grid-template-columns:1fr 1fr;height:260px;}
-  .ba .half{position:relative;overflow:hidden;}
-  .ba .half::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 30%,rgba(255,255,255,.25),transparent 70%);}
-  .ba .before{background:linear-gradient(160deg,#d8b9c4,#b98ea0);}
-  .ba .after{background:linear-gradient(160deg,#f8d3e0,#e59bb9);}
-  .ba-pill{position:absolute;top:12px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.35em .7em;border-radius:999px;z-index:2;}
-  .ba-pill.b{left:12px;background:rgba(30,14,20,.6);color:#fff;}
-  .ba-pill.a{right:12px;background:#fff;color:var(--rose-deep);box-shadow:var(--shadow-sm);}
-  .ba .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.85);transform:translateX(-1px);z-index:2;}
+  .ba{position:relative;display:grid;grid-template-columns:1fr 1fr;height:250px;}
+  .ba .half{position:relative;overflow:hidden;display:grid;place-items:center;}
+  .ba .half svg{width:64%;height:auto;}
+  .ba .before{background:linear-gradient(160deg,#d8ccb4,#c0b092);color:#6d6450;}
+  .ba .after{background:linear-gradient(160deg,#e7edE1,#cde0c6);color:var(--green);}
+  .ba-pill{position:absolute;top:12px;font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.35em .7em;border-radius:999px;z-index:2;}
+  .ba-pill.b{left:12px;background:rgba(60,55,40,.55);color:#fff;}
+  .ba-pill.a{right:12px;background:#fff;color:var(--green);box-shadow:var(--shadow-sm);}
+  .ba .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.9);transform:translateX(-1px);z-index:2;}
   .ba .divider::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);}
-  .ba .divider::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);font-size:.7rem;color:var(--rose-deep);font-weight:800;letter-spacing:-1px;}
+  .ba .divider::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);font-size:.7rem;color:var(--green);font-weight:800;letter-spacing:-1px;}
   .result-body{padding:1.15rem 1.25rem 1.35rem;}
   .result-body h3{font-size:1.1rem;margin-bottom:.15rem;}
   .result-body p{font-size:.86rem;color:var(--muted);font-weight:600;}
-  .result-body .detail{display:inline-flex;align-items:center;gap:.4em;margin-top:.5rem;font-size:.8rem;color:var(--rose-deep);font-weight:700;}
+  .result-body .detail{display:inline-flex;align-items:center;gap:.4em;margin-top:.5rem;font-size:.8rem;color:var(--green-2);font-weight:700;}
   .result-body .detail svg{width:14px;height:14px;}
 
   /* ---- Equipo ---- */
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-  .member{background:var(--card);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line-soft);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+  .member{background:var(--card);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line-soft);transition:transform .4s var(--ease),box-shadow .4s;}
   .member:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
-  .member-photo{position:relative;height:340px;overflow:hidden;}
-  .member:nth-child(1) .member-photo{background:linear-gradient(165deg,#f6d0de,#cf8ba6 70%,#8a5470);}
-  .member:nth-child(2) .member-photo{background:linear-gradient(165deg,#f2d8c9,#cf99a0 70%,#875663);}
-  .member:nth-child(3) .member-photo{background:linear-gradient(165deg,#ecd4ec,#bd8bbb 70%,#744a6f);}
-  .member-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 45% at 50% 32%,rgba(255,255,255,.4),transparent 70%);}
-  .member-photo .silhouette{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);width:66%;opacity:.32;color:#fff;}
+  .member .illus{height:320px;}
+  .member .illus>svg{width:60%;}
   .member-body{padding:1.2rem 1.3rem 1.4rem;text-align:center;}
   .member-body h3{font-size:1.18rem;margin-bottom:.55rem;}
-  .role-pill{display:inline-flex;align-items:center;gap:.4em;background:var(--rose-soft);color:var(--rose-deep);font-size:.76rem;font-weight:700;padding:.4em .85em;border-radius:999px;border:1px solid rgba(196,86,128,.14);}
+  .role-pill{display:inline-flex;align-items:center;gap:.4em;background:var(--green-soft);color:var(--green);font-size:.75rem;font-weight:700;padding:.4em .85em;border-radius:999px;border:1px solid rgba(62,94,72,.14);}
   .member-body p{margin-top:.7rem;font-size:.87rem;color:var(--ink);}
 
   /* ---- Contacto ---- */
   .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:stretch;}
   .form-card{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);padding:clamp(1.5rem,3vw,2.4rem);box-shadow:var(--shadow-sm);}
   .field{margin-bottom:1rem;}
-  .field label{display:block;font-size:.82rem;font-weight:700;color:var(--plum);margin-bottom:.4rem;letter-spacing:.01em;}
-  .field input,.field textarea{
-    width:100%;font-family:inherit;font-size:.98rem;color:var(--plum);
-    background:var(--blush-1);border:1.5px solid var(--line);border-radius:var(--r-sm);
-    padding:.8em .95em;transition:border-color .25s,box-shadow .25s,background .25s;
-  }
+  .field label{display:block;font-size:.82rem;font-weight:700;color:var(--green);margin-bottom:.4rem;}
+  .field input,.field textarea{width:100%;font-family:inherit;font-size:.98rem;color:var(--green);background:var(--cream-1);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:.8em .95em;transition:border-color .25s,box-shadow .25s,background .25s;}
   .field textarea{resize:vertical;min-height:110px;}
   .field input::placeholder,.field textarea::placeholder{color:var(--muted);}
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 4px rgba(212,107,149,.14);background:var(--card);}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--green-2);box-shadow:0 0 0 4px rgba(85,122,94,.16);background:var(--card);}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
   .form-note{font-size:.8rem;color:var(--muted);margin-top:.9rem;text-align:center;}
-  .form-ok{display:none;margin-top:1rem;padding:.9em 1em;border-radius:var(--r-sm);background:var(--rose-soft);color:var(--rose-deep);font-weight:700;font-size:.9rem;text-align:center;}
-  .contact-visual{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:440px;box-shadow:var(--shadow-md);isolation:isolate;}
-  .contact-visual .cv-photo{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 100% at 65% 25%,#f9d3df,#e29fb6 50%,#8a4f68 100%);}
-  .contact-visual .cv-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(40% 40% at 55% 35%,rgba(255,255,255,.4),transparent 70%);mix-blend-mode:screen;}
-  .contact-visual .cv-grad{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(40,16,26,0) 45%,rgba(30,10,18,.7) 100%);}
-  .contact-visual .cv-body{position:absolute;left:0;right:0;bottom:0;padding:1.6rem;color:#fff;}
-  .contact-visual .cv-body h3{color:#fff;font-size:1.4rem;margin-bottom:.5rem;}
-  .cv-list{display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem;}
-  .cv-list a,.cv-list span{display:flex;align-items:center;gap:.6em;color:rgba(255,255,255,.94);font-size:.95rem;font-weight:600;}
-  .cv-list svg{width:18px;height:18px;flex:none;color:#ffd3e2;}
+  .form-ok{display:none;margin-top:1rem;padding:.9em 1em;border-radius:var(--r-sm);background:var(--green-soft);color:var(--green);font-weight:700;font-size:.9rem;text-align:center;}
+  .contact-visual{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:460px;box-shadow:var(--shadow-md);isolation:isolate;display:flex;align-items:flex-end;}
+  .contact-visual .cv-bg{position:absolute;inset:0;z-index:-3;background:radial-gradient(130% 120% at 70% 20%,#5c7e63,#446a4e 45%,#2f4d39 100%);}
+  .contact-visual .cv-illus{position:absolute;right:4%;top:8%;width:56%;color:rgba(255,255,255,.5);z-index:-2;}
+  .contact-visual .cv-grad{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(30,48,36,0) 40%,rgba(28,45,34,.82) 100%);}
+  .cv-body{padding:1.7rem;color:#fff;}
+  .cv-body h3{color:#fff;font-size:1.4rem;margin-bottom:.7rem;}
+  .cv-list{display:flex;flex-direction:column;gap:.6rem;}
+  .cv-list a,.cv-list span{display:flex;align-items:flex-start;gap:.6em;color:rgba(255,255,255,.94);font-size:.95rem;font-weight:600;}
+  .cv-list svg{width:18px;height:18px;flex:none;color:#d7e7cf;margin-top:2px;}
 
   /* ============ FOOTER ============ */
-  footer.site{background:var(--plum);color:rgba(255,255,255,.75);padding:clamp(2.6rem,5vw,4rem) 0 1.6rem;}
-  :root[data-theme="dark"] footer.site,:root:not([data-theme="light"]) footer.site{background:#150a0f;}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer.site{background:#0f070a;}}
-  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.12);}
-  .footer-brand b{font-family:'Fraunces',serif;font-style:italic;color:#fff;font-size:1.9rem;font-weight:500;line-height:1.1;display:block;}
-  .footer-brand p{margin-top:.9rem;font-size:.92rem;max-width:26em;color:rgba(255,255,255,.62);}
+  footer.site{background:#2c4636;color:rgba(255,255,255,.75);padding:clamp(2.6rem,5vw,4rem) 0 1.6rem;}
+  :root[data-theme="dark"] footer.site,:root:not([data-theme="light"]) footer.site{background:#0d130a;}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13);}
+  .footer-brand .fb-logo{display:flex;align-items:center;gap:.7rem;color:#fff;}
+  .footer-brand .fb-logo .mark{width:46px;height:46px;color:#cfe0c6;flex:none;}
+  .footer-brand .fb-logo b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.6rem;letter-spacing:.1em;line-height:.95;}
+  .footer-brand .fb-logo small{display:block;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:3px;}
+  .footer-brand p{margin-top:1rem;font-size:.92rem;max-width:26em;color:rgba(255,255,255,.62);}
   .footer-brand .social{display:flex;gap:.6rem;margin-top:1.2rem;}
-  .footer-brand .social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;transition:background .25s,transform .25s;}
-  .footer-brand .social a:hover{background:var(--rose);transform:translateY(-2px);border-color:transparent;}
+  .footer-brand .social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;transition:background .25s,transform .25s,border-color .25s;}
+  .footer-brand .social a:hover{background:var(--green-3);transform:translateY(-2px);border-color:transparent;}
   .footer-brand .social svg{width:17px;height:17px;color:#fff;}
-  .fcol h4{color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;font-weight:700;}
+  .fcol h4{color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem;font-weight:700;}
   .fcol ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
   .fcol a{font-size:.92rem;color:rgba(255,255,255,.72);transition:color .2s;}
   .fcol a:hover{color:#fff;}
-  .fcol .ln{display:flex;align-items:center;gap:.5em;}
-  .fcol .ln svg{width:15px;height:15px;color:var(--rose-2);flex:none;}
+  .fcol .ln{display:flex;align-items:flex-start;gap:.5em;}
+  .fcol .ln svg{width:15px;height:15px;color:#a9c6a2;flex:none;margin-top:3px;}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.5rem;font-size:.82rem;color:rgba(255,255,255,.5);}
   .footer-bottom .legal{display:flex;gap:1.4rem;}
   .footer-bottom a:hover{color:#fff;}
 
-  /* ============ REVEAL ANIM ============ */
+  /* ============ REVEAL ============ */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
   .reveal.in{opacity:1;transform:none;}
 
@@ -349,20 +267,21 @@
     .contact-grid{grid-template-columns:1fr;}
     .footer-top{grid-template-columns:1fr 1fr;gap:1.8rem;}
     .footer-brand{grid-column:1/-1;}
+    .hero-illus{width:66%;opacity:.85;}
   }
   @media (max-width:720px){
     .nav-links{display:none;}
     .burger{display:grid;}
     .nav-cta .btn-sm span.txt{display:none;}
-    .nav-cta .btn-sm{padding:.5em;} .nav-cta .btn-sm .ico{margin:0;}
+    .nav-cta .btn-sm{padding:.5em;}
     .trust-sep{display:none;}
     .trust-strip{gap:.7rem 1.2rem;justify-content:flex-start;}
     .team-grid{grid-template-columns:1fr;}
     .two-col{grid-template-columns:1fr;}
+    .hero-illus{width:80%;opacity:.5;}
   }
   @media (max-width:520px){
     .services-grid,.results-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:clamp(2.1rem,9vw,2.8rem);}
     .footer-top{grid-template-columns:1fr;}
     .footer-bottom{flex-direction:column;align-items:flex-start;}
   }
@@ -371,20 +290,25 @@
     .reveal{opacity:1;transform:none;transition:none;}
     .btn,.svc,.result,.member{transition:none;}
   }
-  /* menú mobile */
-  .mnav{display:none;flex-direction:column;gap:.2rem;padding:.6rem 0 1rem;border-top:1px solid var(--line-soft);}
-  .mnav.open{display:flex;}
-  .mnav a{padding:.7em .2em;font-weight:600;color:var(--plum);border-bottom:1px solid var(--line-soft);}
 </style>
 </head>
 <body>
 
+<!-- ===== lotus symbol (marca real, vector del logo) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lotus" viewBox="275.7 108.9 290.7 201.3">
+    <path transform="matrix(1,0,0,-1,0,595.2756)" d="M509.5562 338.6526C508.9757 338.4788 508.8926 338.6072 509.3223 339.0446 514.2464 344.0891 518.3331 348.749 521.583 353.0245 525.3307 357.9559 528.3694 364.5839 527.7362 370.624 527.6982 370.9403 527.3138 371.0611 527.1026 370.8275 523.732 367.0421 520.3766 363.219 517.0513 359.3659 511.1019 352.489 504.5944 347.8742 496.6696 342.86 482.2977 333.7662 467.3826 325.404 452.8899 316.7249 442.914 310.7455 433.8354 304.0418 427.1394 294.3901 427.0414 294.247 427.1094 294.0432 427.2826 293.9981 427.3506 293.9754 427.4257 293.9681 427.5011 293.9754 427.5391 293.9754 427.5768 293.9828 427.6142 294.0055 434.7476 298.0848 441.9037 301.3724 449.0745 303.8837 454.6165 305.8214 459.4124 307.0505 463.4691 307.5857 469.5392 308.3774 475.3905 309.2598 481.0232 310.2174 495.8175 312.736 511.1169 318.0974 523.408 326.2711 549.9879 343.9307 558.3728 372.4486 556.6161 403.3644 556.6082 403.5603 556.6082 403.7564 556.6235 403.96 556.6612 404.5558 556.3973 404.8798 555.8165 404.9252 555.2586 404.9629 554.7458 404.6009 554.6024 404.0654 547.3035 377.282 535.661 352.6625 510.7249 339.1274 510.3706 338.9315 509.9786 338.773 509.5562 338.6526"/>
+<path transform="matrix(1,0,0,-1,0,595.2756)" d="M331.8735 338.9315C332.8764 338.019 332.7182 337.7324 331.4137 338.0868 329.5888 338.5695 327.7414 339.4443 325.8791 340.7111 310.6777 351.0337 300.596 365.1344 293.508 381.9946 290.3788 389.4296 287.7622 396.7739 285.6433 404.0354 285.4701 404.6309 285.2512 404.6462 284.9873 404.0807 284.1202 402.2107 283.6981 400.265 283.7282 398.2368 283.8336 391.9935 284.4746 385.109 285.6509 377.591 289.3606 353.9143 300.8526 336.1263 320.1259 324.2353 337.3027 313.6334 356.0029 311.0091 376.2417 307.7821 389.4372 305.6783 402.1126 300.8146 414.2679 293.1911 414.4867 293.0479 414.7053 293.0556 414.9238 293.2064 415.1727 293.3799 415.3235 293.6211 415.3912 293.9454 415.4366 294.179 415.3912 294.3975 415.2481 294.5937 412.9784 297.8059 410.0905 300.6488 406.5843 303.1294 389.3468 315.3149 371.8227 326.2935 354.0197 336.066 344.8054 341.1181 334.671 347.8139 327.1912 355.2789 322.3426 360.1123 317.9163 366.2955 313.6938 371.9432 313.196 372.5994 312.9625 372.5164 312.9925 371.6946 313.4752 357.5863 321.7997 348.1381 331.8735 338.9315"/>
+<path transform="matrix(1,0,0,-1,0,595.2756)" d="M460.5058 436.3007C466.4852 426.8452 472.1255 416.7788 474.5911 406.237 477.7656 392.7022 475.6618 380.1399 468.2648 368.5654 463.8838 361.711 458.4623 355.7843 451.9851 350.7851 451.2535 350.2193 451.0576 350.3701 451.3969 351.2222 452.0755 352.9488 452.935 354.691 453.8925 356.2894 458.877 364.6066 461.9911 373.2026 463.2429 382.0776 465.5577 398.463 460.0307 415.2631 450.7407 428.9641 449.1349 431.3316 447.393 430.5175 445.3571 429.1526 441.5414 426.6113 437.741 424.2665 433.9485 422.1173 432.8099 421.469 431.9048 420.6393 431.2414 419.6364 430.8795 419.0936 430.8795 418.3849 431.2414 417.8344 432.5006 415.9644 433.7297 414.1397 434.9288 412.3525 444.5955 398.0183 444.867 381.1351 439.7545 364.8178 439.4151 363.7318 439.1966 362.7213 438.4049 361.8468 438.171 361.5905 437.7487 361.7337 437.7186 362.0806 437.2509 367.291 437.0023 372.5541 436.3461 377.6666 434.8157 389.5427 430.4117 399.7148 423.1352 408.1901 422.6754 408.7329 422.1323 409.1627 421.5217 409.4722 421.2729 409.6001 420.9789 409.6154 420.7224 409.5023 419.9533 409.1854 419.3201 408.7106 418.8146 408.077 409.8339 396.8946 405.2494 383.7515 405.076 368.6632 405.0533 366.5217 405.129 364.5085 405.3022 362.6308 405.438 361.1908 405.0986 361.0701 404.2843 362.2691 402.9948 364.1615 401.9995 366.2728 401.3133 368.5878 396.9023 383.4952 398.2972 399.149 406.999 412.3298 408.0166 413.8682 409.1102 415.4216 410.2639 416.9823 411.4176 418.5431 411.048 420.285 409.4195 421.2125 404.7517 423.8742 400.2579 426.5887 395.9371 429.3711 393.7431 430.7814 391.8954 429.8916 390.6513 427.9459 387.0697 422.3361 384.1968 416.9069 382.0326 411.6662 375.4046 395.5978 376.0379 379.8609 383.9479 364.4708 386.0742 360.3311 388.442 356.1086 391.0433 351.8104 391.2922 351.3957 391.4807 350.9433 391.6089 350.4682 391.7673 349.8576 391.5862 349.7219 391.0507 350.0535 388.1554 351.8558 385.3956 354.2009 382.7792 357.0888 376.8146 363.6714 372.0339 370.9179 368.4447 378.8427 366.1903 383.8419 365.142 389.1657 365.3005 394.8134 365.7376 409.7285 371.5588 423.1125 380.2606 434.7853 380.5546 435.1774 380.4792 435.7352 380.0871 436.0294 379.205 436.7004 378.1644 437.2055 376.9656 437.5525 369.3798 439.7468 361.402 442.0996 353.0395 444.6028 350.2874 445.4246 348.5378 444.5427 347.7991 441.9485 342.076 421.9211 339.4366 402.6251 344.4134 383.1259 349.918 361.5452 364.5462 347.9423 384.0384 337.7628 385.9761 336.7446 385.8707 336.4206 383.7141 336.7826 351.1321 342.1888 330.0642 364.3804 328.4654 397.6639 327.5079 417.4875 331.7304 437.4848 337.4161 456.8939 338.8184 461.6819 343.0862 460.2342 346.4946 459.2387 359.0192 455.5817 370.8275 451.9925 381.9042 448.4863 385.6445 447.3023 388.6078 446.0658 391.79 449.4212 400.8231 458.9521 408.7259 467.0583 415.4896 473.7464 417.1258 475.3678 418.9277 476.8682 420.9109 478.2557 421.092 478.3765 421.3332 478.3538 421.484 478.203 431.4526 468.3852 440.9609 458.7939 450.002 449.4362 452.0378 447.3323 454.6542 447.0233 457.3009 447.8678 471.7939 452.49 485.7435 456.7881 499.1505 460.762 501.6915 461.516 503.3503 460.5809 504.1196 457.9569 510.0463 437.7183 513.9899 418.3849 513.2585 397.7617 512.5269 377.0104 504.6474 359.4416 487.2742 347.7311 480.5178 343.1767 472.8796 339.806 464.3515 337.6117 462.9036 337.2423 461.486 337.3931 460.0984 338.0794 459.8952 338.1772 459.8872 338.4564 460.0757 338.5769 463.2202 340.5376 466.259 342.4904 469.1923 344.4358 489.5816 357.9633 499.7384 377.8699 500.108 401.9165 500.3116 415.1951 498.253 428.4213 493.9401 441.6094 493.45 443.1025 492.4545 444.1958 490.9462 444.8818 490.6976 444.9949 490.4413 445.0102 490.1848 444.9421L460.7396 436.9039C460.3853 436.8061 460.3096 436.61 460.5058 436.3007ZM422.6077 429.1226C427.5995 432.0782 432.644 435.2451 437.7336 438.6308 438.6308 439.2266 439.2417 440.0257 439.581 441.0213 440.2145 442.8913 439.2193 443.4568 438.118 444.6105 434.2275 448.6895 429.281 453.4177 423.2863 458.7939 420.5188 461.2748 418.7015 459.284 416.3187 457.052 410.3544 451.4797 405.0006 446.4351 400.2503 441.9184 400.1068 441.7826 400.1145 441.6619 400.2803 441.5488 406.275 437.4848 412.5864 433.3374 419.207 429.0999 420.285 428.4136 421.4163 428.4213 422.6077 429.1226"/>
+  </symbol>
+</svg>
+
 <!-- ============ HEADER ============ -->
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Padilla Durán Estética — inicio">
-      <span class="mark">Pd</span>
-      <span><b>Padilla Durán</b><small>Estética</small></span>
+    <a class="brand" href="#top" aria-label="Padilla Durán · Salud y Estética — inicio">
+      <span class="mark"><svg><use href="#lotus"/></svg></span>
+      <span class="wm"><b>PADILLA&nbsp;DURÁN</b><small>Salud y Estética</small></span>
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
@@ -403,55 +327,58 @@
     </div>
   </div>
   <div class="wrap"><div class="mnav" id="mnav">
-    <a href="#servicios">Servicios</a>
-    <a href="#resultados">Resultados</a>
-    <a href="#equipo">Equipo</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#servicios">Servicios</a><a href="#resultados">Resultados</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a>
   </div></div>
 </header>
-
 <span id="top"></span>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-card">
-      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-watermark" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+      <div class="hero-illus" aria-hidden="true">
+        <!-- ilustración: rostro sereno con botánica -->
+        <svg viewBox="0 0 300 320" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M150 300c-6-40-4-70 6-104 12-40 12-70-2-96-14-26-42-40-70-36"/>
+          <path d="M156 74c22-6 40 2 52 20 14 22 12 50-2 74-10 17-14 34-12 54"/>
+          <path d="M150 300c8-30 22-46 44-56 24-11 38-30 40-58"/>
+          <path d="M118 150c-16-6-30-4-44 6M120 178c-18-2-34 4-46 18M126 206c-18 2-32 12-40 28"/>
+          <path d="M198 128c16-8 32-8 48 0M196 158c18-4 34 0 48 12M190 188c18 0 33 8 44 22"/>
+          <circle cx="150" cy="120" r="4" fill="currentColor" stroke="none"/>
+          <path d="M112 96c6-14 20-22 36-22 18 0 32 10 38 26"/>
+          <path d="M100 250c14 4 24 14 28 30M206 250c-14 4-24 14-28 30"/>
+        </svg>
+      </div>
       <div class="hero-overlay" aria-hidden="true"></div>
-      <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto: tratamiento facial (a reemplazar)</span>
       <div class="hero-content">
-        <span class="badge"><span class="dot"></span>Medicina Estética · Córdoba</span>
-        <h1>Donde la ciencia se encuentra con tu <span class="accent">belleza</span></h1>
-        <p class="lead">Tratamientos estéticos personalizados, con tecnología de última generación y un enfoque de resultados naturales. Te acompañamos en cada paso, con calidez y criterio médico.</p>
+        <span class="badge"><span class="dot"></span>Salud y Estética · Córdoba</span>
+        <h1>Tu bienestar y tu belleza, en <span class="accent">equilibrio</span></h1>
+        <p class="lead">Un espacio integral en Valle Escondido donde cuidamos tu piel, tu cuerpo y tu salud. Tratamientos personalizados con profesionales matriculados y resultados naturales.</p>
         <div class="hero-cta">
-          <a href="#contacto" class="btn btn-primary">Reservar consulta
+          <a href="#contacto" class="btn btn-primary">Reservar turno
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-          <a href="tel:+543510000000" class="btn btn-light">+54 351 000-0000
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span></a>
+          <a href="https://wa.me/5493517027130?text=Hola%2C%20quiero%20reservar%20un%20turno%20en%20Padilla%20Dur%C3%A1n" target="_blank" rel="noopener" class="btn btn-light">WhatsApp +54&nbsp;351&nbsp;702-7130
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></span></a>
         </div>
         <div class="social-proof">
-          <div class="avatars" aria-hidden="true">
-            <span class="av1"></span><span class="av2"></span><span class="av3"></span><span class="av4"></span>
-          </div>
-          <div class="sp-text">
-            <div class="stars">★★★★★</div>
-            <b>+1.500 pacientes</b> confían en nosotras
-          </div>
+          <div class="avatars" aria-hidden="true"><span class="av1"></span><span class="av2"></span><span class="av3"></span><span class="av4"></span></div>
+          <div class="sp-text"><div class="stars">★★★★★</div><b>Cientos de pacientes</b> nos eligen en Córdoba</div>
         </div>
       </div>
     </div>
 
-    <!-- strip de confianza -->
     <div class="trust-strip">
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/></svg>+10 años de experiencia</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><path d="M9.5 12.5l1.8 1.8 3.2-3.6"/></svg>Enfoque en tu salud</div>
       <div class="trust-sep"></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><path d="M9.5 12.5l1.8 1.8 3.2-3.6"/></svg>Resultados naturales</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5 5.6.6-4.2 3.8 1.2 5.6L12 19.8 6.9 22.6 8.1 17 3.9 13.2 9.5 12.6 12 2Z"/></svg>Resultados naturales</div>
       <div class="trust-sep"></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 2l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V5l7-3Z"/></svg>Productos aprobados ANMAT</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 2l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V5l7-3Z"/></svg>Profesionales matriculados</div>
       <div class="trust-sep"></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/></svg>Especialistas certificadas</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/></svg>Atención personalizada</div>
       <div class="trust-sep"></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Turnos en el día</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Turnos flexibles</div>
     </div>
   </div>
 </section>
@@ -461,50 +388,117 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="badge"><span class="dot"></span>Nuestros Servicios</span>
-      <h2>Tratamientos que <span class="grad-text accent">ofrecemos</span></h2>
-      <p>Protocolos diseñados para tu piel y tus objetivos, siempre con evaluación médica previa y seguimiento personalizado.</p>
+      <h2>Todo lo que hacemos por <span class="grad-text accent">vos</span></h2>
+      <p>Tratamientos de salud y estética integral, siempre con evaluación previa y un plan pensado para tus objetivos.</p>
     </div>
     <div class="services-grid">
+
       <article class="svc reveal">
-        <div class="svc-photo" aria-hidden="true"></div><div class="svc-grad" aria-hidden="true"></div>
-        <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="40" y="34" width="86" height="34" rx="14" transform="rotate(-18 83 51)"/>
+            <path d="M120 74l30 22"/><path d="M150 96l52 26"/>
+            <path d="M150 96l-6 20M172 90l2 22M132 106l-12 16"/>
+            <path d="M60 118h120"/>
+            <path d="M196 40l6-8M210 52l10-4M200 66l9 3" stroke-width="2.4"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
         <div class="svc-body">
-          <div class="svc-num">01</div>
-          <h3>Limpieza Facial Profunda</h3>
-          <p>Higiene, hidratación y luminosidad con Hydrafacial para una piel renovada.</p>
-          <span class="svc-link">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-num">01</div><h3>Depilación Definitiva</h3>
+          <p>Láser de última generación para todo tipo de piel. Sesiones rápidas, seguras y con resultados duraderos.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
+
       <article class="svc reveal">
-        <div class="svc-photo" aria-hidden="true"></div><div class="svc-grad" aria-hidden="true"></div>
-        <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M96 118c-20-4-34-22-34-46 0-30 22-52 50-52s50 22 50 52c0 12-4 22-10 30"/>
+            <path d="M150 128l40-40M182 96l16-16 8 8-16 16zM188 72l14-14"/>
+            <path d="M150 128l-6-6 40-40 6 6z"/>
+            <circle cx="96" cy="66" r="3" fill="currentColor" stroke="none"/>
+            <circle cx="118" cy="54" r="3" fill="currentColor" stroke="none"/>
+            <circle cx="110" cy="82" r="3" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
         <div class="svc-body">
-          <div class="svc-num">02</div>
-          <h3>Toxina Botulínica</h3>
-          <p>Suavizamos líneas de expresión con aplicación precisa y gesto natural.</p>
-          <span class="svc-link">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-num">02</div><h3>Medicina Estética</h3>
+          <p>Toxina botulínica, rellenos y bioestimulación con criterio médico, para realzar tus rasgos con armonía.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
+
       <article class="svc reveal">
-        <div class="svc-photo" aria-hidden="true"></div><div class="svc-grad" aria-hidden="true"></div>
-        <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M104 30c34 0 58 22 58 52 0 26-20 44-48 44-10 0-18-2-24-6"/>
+            <path d="M104 30c-16 8-26 24-26 44 0 8 2 15 6 21"/>
+            <circle cx="150" cy="118" r="16"/>
+            <path d="M160 108l40-40"/><rect x="196" y="58" width="16" height="16" rx="4" transform="rotate(45 204 66)"/>
+            <path d="M96 62l6 6M112 58l4 7M100 82l7 3" stroke-width="2.2"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
         <div class="svc-body">
-          <div class="svc-num">03</div>
-          <h3>Rellenos con Ácido Hialurónico</h3>
-          <p>Volumen e hidratación para labios y rostro, con armonía y equilibrio.</p>
-          <span class="svc-link">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-num">03</div><h3>Estética Facial</h3>
+          <p>Limpiezas profundas, peelings e hidratación para una piel luminosa, sana y renovada.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
+
       <article class="svc reveal">
-        <div class="svc-photo" aria-hidden="true"></div><div class="svc-grad" aria-hidden="true"></div>
-        <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="120" cy="34" r="12"/>
+            <path d="M120 46c-14 0-22 10-22 26 0 10 4 18 4 26l-6 26M120 46c14 0 22 10 22 26 0 10-4 18-4 26l6 26"/>
+            <path d="M100 72l-16 10M140 72l16 10"/>
+            <path d="M104 84c8 6 24 6 32 0M108 106c6 4 18 4 24 0" stroke-dasharray="1 7" stroke-width="2.4"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
         <div class="svc-body">
-          <div class="svc-num">04</div>
-          <h3>Depilación Láser Definitiva</h3>
-          <p>Tecnología de diodo para todo tipo de piel, con sesiones rápidas e indoloras.</p>
-          <span class="svc-link">Ver más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="svc-num">04</div><h3>Estética Corporal</h3>
+          <p>Tratamientos reductores, reafirmantes y anticelulíticos para acompañar tus objetivos con constancia.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
+
+      <article class="svc reveal">
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M120 22c-4 12-4 22 0 32s4 20 0 30 -4 20 0 30 4 16 0 24"/>
+            <path d="M108 34h24M106 52h28M104 72h32M106 92h28M108 112h24" stroke-width="2.4"/>
+            <path d="M96 60c-16 2-26 12-28 28 0 6 2 12 8 14 8 2 12-4 16-10"/>
+            <path d="M144 60c16 2 26 12 28 28 0 6-2 12-8 14-8 2-12-4-16-10"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">05</div><h3>Osteopatía</h3>
+          <p>Terapia manual para aliviar dolores, mejorar la movilidad y devolverle el equilibrio a tu cuerpo.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="illus">
+          <svg viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M52 108c26-16 60-24 88-24s52 6 72 18"/>
+            <path d="M96 84c2-12 10-20 20-20 6 0 10 3 12 8 3-6 8-9 14-9 10 0 16 8 16 20 0 8-4 14-10 18"/>
+            <path d="M120 72l-4 20M138 71l2 20" stroke-width="2.2"/>
+            <path d="M78 58c0-6 4-10 4-16M92 52c0-6 4-10 4-16M66 66c0-6 4-10 4-16" stroke-width="2.2"/>
+          </svg>
+          <span class="leafwm"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5C30 25 20 45 50 95 80 45 70 25 50 5Z"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">06</div><h3>Masajes</h3>
+          <p>Descontracturantes, relajantes y drenaje linfático para liberar tensiones y reconectar con vos.</p>
+          <a href="#contacto" class="svc-link">Reservar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -515,44 +509,35 @@
     <div class="sec-head reveal">
       <span class="badge"><span class="dot"></span>Antes y Después</span>
       <h2>Resultados <span class="grad-text accent">reales</span></h2>
-      <p>Cambios logrados con planes personalizados. Cada piel es única: los resultados varían según cada paciente.</p>
+      <p>Cambios logrados con planes personalizados. Cada cuerpo es único: los resultados varían según cada paciente.</p>
     </div>
     <div class="results-grid">
       <article class="result reveal">
         <div class="ba">
-          <div class="half before"></div><div class="half after"></div>
-          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span>
-          <span class="divider" aria-hidden="true"></span>
+          <div class="half before"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M40 105c-4-30-2-52 8-70 8-14 22-22 38-20"/><path d="M86 16c10 4 16 14 16 28 0 12-6 22-6 34"/><path d="M56 60c4 4 12 4 16 0" stroke-dasharray="1 6"/></svg></div>
+          <div class="half after"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M40 105c-4-30-2-52 8-70 8-14 22-22 38-20"/><path d="M86 16c10 4 16 14 16 28 0 12-6 22-6 34"/><path d="M50 44l4-8M64 34l3-7M78 40l7-3" stroke-width="2.2"/></svg></div>
+          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span><span class="divider" aria-hidden="true"></span>
         </div>
-        <div class="result-body">
-          <h3>Rejuvenecimiento facial</h3>
-          <p>Toxina botulínica + skinbooster</p>
-          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2 sesiones · 6 semanas</span>
-        </div>
+        <div class="result-body"><h3>Rejuvenecimiento facial</h3><p>Medicina estética + skinbooster</p>
+          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2 sesiones · 6 semanas</span></div>
       </article>
       <article class="result reveal">
         <div class="ba">
-          <div class="half before"></div><div class="half after"></div>
-          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span>
-          <span class="divider" aria-hidden="true"></span>
+          <div class="half before"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M60 30c-16 0-26 12-26 30s12 34 26 34 26-16 26-34-10-30-26-30Z"/><path d="M48 96c0-6 5-10 12-10s12 4 12 10" stroke-dasharray="1 6"/></svg></div>
+          <div class="half after"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M60 30c-16 0-26 12-26 30s12 34 26 34 26-16 26-34-10-30-26-30Z"/><path d="M40 40l5-8M80 40l-5-8M60 24v-8" stroke-width="2.2"/></svg></div>
+          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span><span class="divider" aria-hidden="true"></span>
         </div>
-        <div class="result-body">
-          <h3>Armonización de labios</h3>
-          <p>Relleno con ácido hialurónico</p>
-          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>1 sesión · resultado inmediato</span>
-        </div>
+        <div class="result-body"><h3>Piel luminosa</h3><p>Estética facial · limpieza + peeling</p>
+          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 sesiones · 8 semanas</span></div>
       </article>
       <article class="result reveal">
         <div class="ba">
-          <div class="half before"></div><div class="half after"></div>
-          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span>
-          <span class="divider" aria-hidden="true"></span>
+          <div class="half before"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="30" r="10"/><path d="M60 40c-12 0-18 8-18 22 0 8 3 15 3 22l-4 22M60 40c12 0 18 8 18 22 0 8-3 15-3 22l4 22" stroke-dasharray="1 6"/></svg></div>
+          <div class="half after"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="30" r="10"/><path d="M60 40c-11 0-17 8-17 22 0 8 3 15 3 22l-3 22M60 40c11 0 17 8 17 22 0 8-3 15-3 22l3 22"/></svg></div>
+          <span class="ba-pill b">Antes</span><span class="ba-pill a">Después</span><span class="divider" aria-hidden="true"></span>
         </div>
-        <div class="result-body">
-          <h3>Piel luminosa</h3>
-          <p>Peeling + Hydrafacial</p>
-          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 sesiones · 8 semanas</span>
-        </div>
+        <div class="result-body"><h3>Silueta y firmeza</h3><p>Estética corporal · reductor + reafirmante</p>
+          <span class="detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8 sesiones · 10 semanas</span></div>
       </article>
     </div>
   </div>
@@ -563,42 +548,27 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="badge"><span class="dot"></span>Nuestro Equipo</span>
-      <h2>Conocé a las <span class="grad-text accent">expertas</span></h2>
-      <p>Profesionales certificadas y en formación continua, dedicadas a cuidarte con criterio médico y cercanía.</p>
+      <h2>Conocé a las <span class="grad-text accent">profesionales</span></h2>
+      <p>Un equipo matriculado y en formación continua, dedicado a cuidarte con criterio profesional y cercanía.</p>
     </div>
     <div class="team-grid">
       <article class="member reveal">
-        <div class="member-photo" aria-hidden="true">
-          <svg class="silhouette" viewBox="0 0 100 120" fill="currentColor"><circle cx="50" cy="40" r="22"/><path d="M10 120c0-25 18-42 40-42s40 17 40 42Z"/></svg>
-          <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M64 74c0-24 16-40 36-40s36 16 36 40M66 78c-6 2-10 8-10 16M134 78c6 2 10 8 10 16"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
         </div>
-        <div class="member-body">
-          <h3>Dra. Carolina Padilla</h3>
-          <span class="role-pill">Directora Médica</span>
-          <p>Especialista en medicina estética facial y armonización.</p>
-        </div>
+        <div class="member-body"><h3>Dra. ▪ Padilla</h3><span class="role-pill">Directora Médica</span><p>Medicina estética y armonización facial.</p></div>
       </article>
       <article class="member reveal">
-        <div class="member-photo" aria-hidden="true">
-          <svg class="silhouette" viewBox="0 0 100 120" fill="currentColor"><circle cx="50" cy="40" r="22"/><path d="M10 120c0-25 18-42 40-42s40 17 40 42Z"/></svg>
-          <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M60 88c-6-32 12-56 40-56s46 24 40 56M60 88c-8 6-8 22 0 30M140 88c8 6 8 22 0 30"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
         </div>
-        <div class="member-body">
-          <h3>Dra. Valentina Durán</h3>
-          <span class="role-pill">Médica Estética</span>
-          <p>Rellenos, bioestimulación y tratamientos corporales.</p>
-        </div>
+        <div class="member-body"><h3>Lic. ▪ Durán</h3><span class="role-pill">Estética &amp; Corporal</span><p>Estética facial, corporal y depilación láser.</p></div>
       </article>
       <article class="member reveal">
-        <div class="member-photo" aria-hidden="true">
-          <svg class="silhouette" viewBox="0 0 100 120" fill="currentColor"><circle cx="50" cy="40" r="22"/><path d="M10 120c0-25 18-42 40-42s40 17 40 42Z"/></svg>
-          <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto</span>
+        <div class="illus">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M66 70c0-22 14-40 34-40s34 18 34 40M74 52c14 8 38 8 52 0"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
         </div>
-        <div class="member-body">
-          <h3>Lic. Julieta Moyano</h3>
-          <span class="role-pill">Cosmetóloga &amp; Técnica Láser</span>
-          <p>Limpiezas profundas, depilación láser y cuidado de la piel.</p>
-        </div>
+        <div class="member-body"><h3>▪ Osteópata</h3><span class="role-pill">Osteopatía &amp; Masajes</span><p>Terapia manual, osteopatía y masajes terapéuticos.</p></div>
       </article>
     </div>
   </div>
@@ -607,47 +577,44 @@
 <!-- ============ CONTACTO ============ -->
 <section class="block" id="contacto">
   <div class="wrap">
-    <div class="sec-head left reveal" style="text-align:left;margin-left:0;">
+    <div class="sec-head left reveal">
       <span class="badge"><span class="dot"></span>Contacto</span>
-      <h2>Reservá tu <span class="grad-text accent">consulta</span></h2>
-      <p>Contanos tus objetivos y armamos un plan de tratamiento personalizado para vos.</p>
+      <h2>Reservá tu <span class="grad-text accent">turno</span></h2>
+      <p>Contanos qué necesitás y armamos un plan pensado para vos. Te respondemos a la brevedad.</p>
     </div>
     <div class="contact-grid">
       <div class="form-card reveal">
         <form id="reservaForm" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
-          </div>
+          <div class="field"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required></div>
           <div class="two-col">
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-            </div>
-            <div class="field">
-              <label for="tel">Teléfono</label>
-              <input type="tel" id="tel" name="tel" placeholder="+54 351 ..." required>
-            </div>
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.com"></div>
+            <div class="field"><label for="tel">Teléfono</label><input type="tel" id="tel" name="tel" placeholder="+54 351 ..." required></div>
           </div>
-          <div class="field">
-            <label for="msg">Mensaje / Objetivos</label>
-            <textarea id="msg" name="msg" placeholder="Contanos qué te gustaría trabajar y cuándo te queda cómodo el turno."></textarea>
-          </div>
+          <div class="field"><label for="serv">¿Qué te interesa?</label><input type="text" id="serv" name="serv" placeholder="Depilación, medicina estética, masajes..."></div>
+          <div class="field"><label for="msg">Mensaje</label><textarea id="msg" name="msg" placeholder="Contanos tus objetivos y qué días te quedan cómodos."></textarea></div>
           <button type="submit" class="btn btn-primary btn-block">Solicitar turno
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-          <p class="form-note">Te respondemos dentro de las 24 hs hábiles. Sin compromiso.</p>
-          <div class="form-ok" id="formOk">¡Gracias! Recibimos tu solicitud y te contactamos a la brevedad. 💗</div>
+          <p class="form-note">También podés escribirnos directo por WhatsApp. Sin compromiso.</p>
+          <div class="form-ok" id="formOk">¡Gracias! Recibimos tu solicitud y te contactamos a la brevedad. 🌿</div>
         </form>
       </div>
       <aside class="contact-visual reveal">
-        <div class="cv-photo" aria-hidden="true"></div><div class="cv-grad" aria-hidden="true"></div>
-        <span class="photo-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3"/></svg>Foto: consultorio (a reemplazar)</span>
+        <div class="cv-bg" aria-hidden="true"></div>
+        <div class="cv-illus" aria-hidden="true">
+          <svg viewBox="0 0 220 240" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M110 150c0-40 8-70 30-92M110 150c0-30-6-54-24-72"/>
+            <path d="M140 58c18-6 34 0 44 16M96 78c-16-8-32-6-44 8"/>
+            <path d="M150 92c16-2 30 6 38 20M84 108c-16 0-28 8-34 22"/>
+            <path d="M84 178h52l-6 42H90z"/><path d="M96 178c0-8 4-12 14-12s14 4 14 12"/>
+          </svg>
+        </div>
+        <div class="cv-grad" aria-hidden="true"></div>
         <div class="cv-body">
-          <h3>Te esperamos en el corazón de Córdoba</h3>
+          <h3>Te esperamos en Valle Escondido</h3>
           <div class="cv-list">
-            <a href="tel:+543510000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>+54 351 000-0000</a>
-            <a href="mailto:hola@padilladuran.com.ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hola@padilladuran.com.ar</a>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Nueva Córdoba, Córdoba · Argentina</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Av. República de China 1151, 1.º piso, local 7 · Valle Escondido, Córdoba</span>
+            <a href="tel:+543517027130"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>+54 351 702-7130</a>
+            <a href="https://wa.me/5493517027130?text=Hola%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp directo</a>
           </div>
         </div>
       </aside>
@@ -660,74 +627,55 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <b>Padilla Durán</b>
-        <p>Medicina estética con criterio médico y resultados naturales, en Córdoba. Realzamos tu belleza cuidando siempre tu salud.</p>
+        <div class="fb-logo">
+          <span class="mark"><svg><use href="#lotus"/></svg></span>
+          <span><b>PADILLA DURÁN</b><small>Salud y Estética</small></span>
+        </div>
+        <p>Salud y estética integral en Valle Escondido, Córdoba. Cuidamos tu piel, tu cuerpo y tu bienestar con profesionales matriculados y resultados naturales.</p>
         <div class="social">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z"/></svg></a>
+          <a href="https://wa.me/5493517027130" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
         </div>
       </div>
-      <div class="fcol">
-        <h4>Tratamientos</h4>
-        <ul>
-          <li><a href="#servicios">Limpieza facial profunda</a></li>
-          <li><a href="#servicios">Toxina botulínica</a></li>
-          <li><a href="#servicios">Rellenos dérmicos</a></li>
-          <li><a href="#servicios">Depilación láser</a></li>
-          <li><a href="#servicios">Peeling &amp; Skinbooster</a></li>
-        </ul>
-      </div>
-      <div class="fcol">
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="#equipo">Sobre nosotras</a></li>
-          <li><a href="#resultados">Testimonios</a></li>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#">Trabajá con nosotras</a></li>
-        </ul>
-      </div>
-      <div class="fcol">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a class="ln" href="tel:+543510000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>+54 351 000-0000</a></li>
-          <li><a class="ln" href="mailto:hola@padilladuran.com.ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hola@padilladuran.com.ar</a></li>
-          <li><span class="ln"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Nueva Córdoba, Córdoba</span></li>
-        </ul>
-      </div>
+      <div class="fcol"><h4>Servicios</h4><ul>
+        <li><a href="#servicios">Depilación definitiva</a></li>
+        <li><a href="#servicios">Medicina estética</a></li>
+        <li><a href="#servicios">Estética facial</a></li>
+        <li><a href="#servicios">Estética corporal</a></li>
+        <li><a href="#servicios">Osteopatía</a></li>
+        <li><a href="#servicios">Masajes</a></li>
+      </ul></div>
+      <div class="fcol"><h4>Clínica</h4><ul>
+        <li><a href="#equipo">Nuestro equipo</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#contacto">Reservar turno</a></li>
+      </ul></div>
+      <div class="fcol"><h4>Contacto</h4><ul>
+        <li><span class="ln"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Av. Rep. de China 1151, 1.º piso, local 7 · Valle Escondido</span></li>
+        <li><a class="ln" href="tel:+543517027130"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>+54 351 702-7130</a></li>
+        <li><a class="ln" href="https://wa.me/5493517027130" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Padilla Durán Estética. Todos los derechos reservados.</span>
-      <div class="legal">
-        <a href="#">Privacidad</a>
-        <a href="#">Términos</a>
-      </div>
+      <span>© 2026 Padilla Durán · Salud y Estética. Todos los derechos reservados.</span>
+      <div class="legal"><a href="#">Privacidad</a><a href="#">Términos</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-  // menú mobile
   var burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
-  burger.addEventListener('click',function(){
-    var open=mnav.classList.toggle('open');
-    burger.setAttribute('aria-expanded',open);
-  });
+  burger.addEventListener('click',function(){var o=mnav.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
   mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open');burger.setAttribute('aria-expanded',false);});});
 
-  // reveal on scroll
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.12});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
-  // form (boceto): confirmación local
   var form=document.getElementById('reservaForm'),ok=document.getElementById('formOk');
-  form.addEventListener('submit',function(ev){
-    ev.preventDefault();
+  form.addEventListener('submit',function(ev){ev.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}
-    ok.style.display='block';
-    form.querySelector('button[type=submit]').style.display='none';
+    ok.style.display='block';form.querySelector('button[type=submit]').style.display='none';
     ok.scrollIntoView({behavior:'smooth',block:'center'});
   });
 </script>
