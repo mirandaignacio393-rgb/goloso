@@ -7,7 +7,7 @@
 <meta name="description" content="Salud y estética integral en Valle Escondido, Córdoba. Depilación definitiva, medicina estética, estética facial y corporal, osteopatía y masajes. Reservá tu turno.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   /* ============ TOKENS (brand: sage green + warm cream) ============ */
   :root{
@@ -68,9 +68,10 @@
 
   /* ============ BADGE / PILL ============ */
   .badge{display:inline-flex;align-items:center;gap:.5em;background:var(--green-soft);color:var(--green);
+    font-family:'Montserrat',system-ui,sans-serif;
     font-size:.73rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-    padding:.5em 1em;border-radius:999px;border:1px solid rgba(62,94,72,.14);}
-  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green-2);}
+    padding:.5em 1.1em;border-radius:999px;border:1px solid rgba(62,94,72,.14);}
+  .badge .dot{display:none;}
 
   /* ============ BUTTONS ============ */
   .btn{display:inline-flex;align-items:center;gap:.7em;font-family:inherit;font-weight:700;font-size:1rem;
@@ -204,8 +205,8 @@
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
   .member{background:var(--card);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line-soft);transition:transform .4s var(--ease),box-shadow .4s;}
   .member:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
-  .member .illus{height:320px;}
-  .member .illus>svg{width:60%;}
+  .member .illus{height:330px;place-items:end center;}
+  .member .illus>svg{width:88%;}
   .member-body{padding:1.2rem 1.3rem 1.4rem;text-align:center;}
   .member-body h3{font-size:1.18rem;margin-bottom:.55rem;}
   .role-pill{display:inline-flex;align-items:center;gap:.4em;background:var(--green-soft);color:var(--green);font-size:.75rem;font-weight:700;padding:.4em .85em;border-radius:999px;border:1px solid rgba(62,94,72,.14);}
@@ -554,19 +555,60 @@
     <div class="team-grid">
       <article class="member reveal">
         <div class="illus">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M64 74c0-24 16-40 36-40s36 16 36 40M66 78c-6 2-10 8-10 16M134 78c6 2 10 8 10 16"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
+          <svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retrato profesional">
+<path d="M58 120C50 70 78 34 110 34s60 36 52 86c-3 22-13 32-13 32H71s-10-10-13-32Z" fill="#3B2A22"/>
+<circle cx="110" cy="30" r="15" fill="#3B2A22"/>
+<path d="M30 250C34 196 66 176 110 176s76 20 80 74Z" fill="#3E5E48"/>
+<path d="M96 176 110 200 124 176Z" fill="#33503f"/>
+<path d="M97 150h26v24c-13 9-26 0-26 0Z" fill="#E3A87F"/>
+<ellipse cx="110" cy="110" rx="40" ry="45" fill="#EAB489"/>
+<circle cx="71" cy="112" r="7" fill="#EAB489"/><circle cx="149" cy="112" r="7" fill="#EAB489"/>
+<path d="M72 96c6-30 28-40 38-40s32 10 38 40c-8-12-20-16-38-16s-30 4-38 16Z" fill="#3B2A22"/>
+<path d="M88 100q8-5 16 0M116 100q8-5 16 0" stroke="#5B4636" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="96" cy="110" r="3.4" fill="#3A2E28"/><circle cx="124" cy="110" r="3.4" fill="#3A2E28"/>
+<path d="M110 114v8q-4 3-6 3" stroke="#C98A63" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M100 132q10 8 20 0" stroke="#B06A55" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="90" cy="124" rx="7" ry="4" fill="#E38A6E" opacity=".33"/><ellipse cx="130" cy="124" rx="7" ry="4" fill="#E38A6E" opacity=".33"/>
+</svg>
         </div>
         <div class="member-body"><h3>Dra. ▪ Padilla</h3><span class="role-pill">Directora Médica</span><p>Medicina estética y armonización facial.</p></div>
       </article>
       <article class="member reveal">
         <div class="illus">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M60 88c-6-32 12-56 40-56s46 24 40 56M60 88c-8 6-8 22 0 30M140 88c8 6 8 22 0 30"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
+          <svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retrato profesional">
+<path d="M52 120C44 66 78 32 110 32s66 34 58 88c-2 30-10 56-18 80H70c-8-24-16-50-18-80Z" fill="#6B4A32"/>
+<path d="M30 250C34 200 66 182 110 182s76 18 80 68Z" fill="#E7DCC6"/>
+<path d="M96 182 110 202 124 182Z" fill="#d5c6a9"/>
+<path d="M97 154h26v22c-13 9-26 0-26 0Z" fill="#F0C6A0"/>
+<ellipse cx="110" cy="112" rx="40" ry="45" fill="#F6CDA6"/>
+<circle cx="71" cy="114" r="7" fill="#F6CDA6"/><circle cx="149" cy="114" r="7" fill="#F6CDA6"/>
+<path d="M70 100c4-36 26-46 40-46s36 10 40 46c-6-18-20-28-40-28s-34 10-40 28Z" fill="#6B4A32"/>
+<path d="M110 56 104 92M110 56 116 92" stroke="#5a3d29" stroke-width="2" opacity=".45"/>
+<path d="M88 102q8-5 16 0M116 102q8-5 16 0" stroke="#7a5a3f" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="96" cy="112" r="3.4" fill="#4a382c"/><circle cx="124" cy="112" r="3.4" fill="#4a382c"/>
+<path d="M110 116v8q-4 3-6 3" stroke="#dba07a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M100 134q10 8 20 0" stroke="#b56a55" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="90" cy="126" rx="7" ry="4" fill="#ed967a" opacity=".3"/><ellipse cx="130" cy="126" rx="7" ry="4" fill="#ed967a" opacity=".3"/>
+</svg>
         </div>
         <div class="member-body"><h3>Lic. ▪ Durán</h3><span class="role-pill">Estética &amp; Corporal</span><p>Estética facial, corporal y depilación láser.</p></div>
       </article>
       <article class="member reveal">
         <div class="illus">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="34"/><path d="M66 70c0-22 14-40 34-40s34 18 34 40M74 52c14 8 38 8 52 0"/><path d="M46 180c0-30 24-52 54-52s54 22 54 52"/></svg>
+          <svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retrato profesional">
+<path d="M60 130C48 76 80 34 110 34s62 42 50 96c-4 22-10 30-16 34V120c0-24-14-36-34-36s-34 12-34 36v44c-6-4-12-12-16-34Z" fill="#201A18"/>
+<path d="M30 250C34 198 66 178 110 178s76 20 80 72Z" fill="#557A5E"/>
+<path d="M96 178 110 200 124 178Z" fill="#46654e"/>
+<path d="M97 152h26v24c-13 9-26 0-26 0Z" fill="#CE9066"/>
+<ellipse cx="110" cy="110" rx="40" ry="45" fill="#D69A72"/>
+<circle cx="71" cy="112" r="7" fill="#D69A72"/><circle cx="149" cy="112" r="7" fill="#D69A72"/>
+<path d="M72 94c10-16 28-20 38-20s28 4 38 20c-8-14-22-18-38-18s-30 4-38 18Z" fill="#201A18"/>
+<path d="M88 100q8-5 16 0M116 100q8-5 16 0" stroke="#3a2c26" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="96" cy="110" r="3.4" fill="#2a211d"/><circle cx="124" cy="110" r="3.4" fill="#2a211d"/>
+<path d="M110 114v8q-4 3-6 3" stroke="#bd8158" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M100 132q10 8 20 0" stroke="#a55f4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="90" cy="124" rx="7" ry="4" fill="#d97e60" opacity=".3"/><ellipse cx="130" cy="124" rx="7" ry="4" fill="#d97e60" opacity=".3"/>
+</svg>
         </div>
         <div class="member-body"><h3>▪ Osteópata</h3><span class="role-pill">Osteopatía &amp; Masajes</span><p>Terapia manual, osteopatía y masajes terapéuticos.</p></div>
       </article>
@@ -633,7 +675,7 @@
         </div>
         <p>Salud y estética integral en Valle Escondido, Córdoba. Cuidamos tu piel, tu cuerpo y tu bienestar con profesionales matriculados y resultados naturales.</p>
         <div class="social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.instagram.com/padilladuranestetica/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://wa.me/5493517027130" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
         </div>
       </div>
