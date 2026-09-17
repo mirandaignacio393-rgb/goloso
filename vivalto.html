@@ -418,6 +418,35 @@ html:not(.js) .reveal{opacity:1;transform:none}
 .disc{margin-top:18px;font-size:.8rem;color:var(--milk-faint);display:inline-flex;gap:8px;align-items:flex-start}
 .disc::before{content:"◆";color:var(--crema);font-size:.7rem;margin-top:3px}
 .scene--light .disc{color:var(--ink-soft)}
+
+/* --- datos reales de la propuesta --- */
+.amt .cur{font-size:.5em;vertical-align:.32em;margin-right:3px;font-family:var(--sans);color:var(--crema-deep);font-weight:600}
+.iva{display:inline-block;font-family:var(--sans);font-size:.4em;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--crema-deep);vertical-align:middle;margin-left:10px;border:1px solid rgba(160,111,52,.45);
+  border-radius:20px;padding:3px 9px;font-weight:600}
+.desglose{margin-top:30px;border:1px solid rgba(36,24,17,.14);border-radius:16px;overflow:hidden;max-width:660px}
+.desglose .row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  padding:13px 20px;border-bottom:1px solid rgba(36,24,17,.10);font-size:.95rem}
+.desglose .row small{display:block;font-size:.76rem;color:var(--ink-soft)}
+.desglose .row:last-child{border-bottom:none}
+.desglose .row.tot{background:rgba(201,145,80,.12);font-family:var(--serif);font-size:1.12rem}
+.desglose .row .v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.conds{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:9px 30px;max-width:860px;padding:0}
+.conds li{list-style:none;font-size:.84rem;color:var(--ink-soft);padding-left:17px;position:relative;line-height:1.5}
+.conds li::before{content:"◆";position:absolute;left:0;color:var(--crema-deep);font-size:.55rem;top:5px}
+.stats{display:flex;flex-wrap:wrap;gap:22px 40px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(36,24,17,.12)}
+.stats .stat .n{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.3rem);color:var(--ink);line-height:1}
+.stats .stat .l{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.plan8{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;margin-top:34px}
+.plan8 .h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--ink);margin-bottom:12px;
+  padding-bottom:8px;border-bottom:1px solid rgba(36,24,17,.12)}
+.plan8 ul{margin:0;padding:0}
+.plan8 li{list-style:none;font-size:.9rem;color:var(--ink-soft);padding:5px 0 5px 24px;position:relative;line-height:1.45}
+.plan8 li::before{content:"✓";position:absolute;left:0;color:var(--crema-deep);font-weight:700}
+@media(max-width:640px){.plan8{grid-template-columns:1fr}}
+.agency{margin-top:16px;font-size:.82rem;color:var(--ink-soft)}
+.agency b{color:var(--ink);font-weight:600}
 </style>
 
 <a href="#construir" class="skip">Saltar a la propuesta</a>
@@ -833,21 +862,44 @@ html:not(.js) .reveal{opacity:1;transform:none}
   <div class="wrap">
     <div class="eyebrow" data-n="17"><span class="barline"></span>Inversión</div>
     <h2 class="headline reveal">Clara y <em>profesional</em>.</h2>
-    <p class="lead reveal d1">Separamos con transparencia el costo del desarrollo de los costos propios de la plataforma.</p>
+    <p class="lead reveal d1">Separamos con transparencia el desarrollo, el acompañamiento mensual y los costos propios de la plataforma.</p>
 
     <div class="invest">
       <div class="inv-card hi reveal" style="border-color:rgba(160,111,52,.4);background:rgba(201,145,80,.10)">
-        <div class="t" style="color:var(--crema-deep)">Desarrollo</div>
-        <div class="amt" style="color:var(--ink)"><span class="ph">Monto a definir</span><small>Pago único</small></div>
-        <div class="n" style="color:var(--ink-soft)">Diseño, desarrollo y puesta en marcha de la tienda Vivalto.</div>
+        <div class="t" style="color:var(--crema-deep)">Desarrollo · pago único</div>
+        <div class="amt" style="color:var(--ink)"><span class="cur">$</span>1.679.100<span class="iva">+ IVA</span><small>6 pagos de $279.850</small></div>
+        <div class="n" style="color:var(--ink-soft)">Diseño e implementación completa de la tienda Vivalto en Tienda Nube.</div>
       </div>
       <div class="inv-card reveal d1" style="border-color:rgba(36,24,17,.14);background:#fff">
-        <div class="t" style="color:var(--crema-deep)">Soporte / Mantenimiento</div>
-        <div class="amt" style="color:var(--ink)"><span class="ph">Monto a definir</span><small>Mensual · si corresponde</small></div>
-        <div class="n" style="color:var(--ink-soft)">Acompañamiento y mejoras posteriores al lanzamiento.</div>
+        <div class="t" style="color:var(--crema-deep)">Acompañamiento · mensual</div>
+        <div class="amt" style="color:var(--ink)"><span class="cur">$</span>407.008<span class="iva">+ IVA</span><small>Plan Estratégico · 8 hs mensuales</small></div>
+        <div class="n" style="color:var(--ink-soft)">Puesta en producción y mejora continua tras el lanzamiento.</div>
       </div>
     </div>
-    <p class="note reveal">Los montos se completan en la propuesta comercial de Vivalto. El costo del desarrollo es independiente de los costos propios de Tienda Nube (ver escena siguiente).</p>
+
+    <div class="desglose reveal d1">
+      <div class="row"><span>Total implementación <small>Agencia · costo por única vez</small></span><span class="v">$1.679.100</span></div>
+      <div class="row"><span>Acompañamiento mensual <small>Agencia · Plan Estratégico 8 hs</small></span><span class="v">$407.008</span></div>
+      <div class="row"><span>Servicio Tienda Nube <small>Plan Escala · plataforma</small></span><span class="v">$26.999 + 2% CPT</span></div>
+      <div class="row tot"><span>Total servicio mensual</span><span class="v">$434.007</span></div>
+    </div>
+
+    <ul class="conds reveal">
+      <li>Los precios NO incluyen IVA (21%).</li>
+      <li>Pago único: valores a 0, 30, 60, 90, 120 y 150 días.</li>
+      <li>Servicios mensuales: mediante débito directo.</li>
+      <li>Los primeros 6 meses incluyen el soporte completo.</li>
+      <li>El abono mensual se factura una vez que la tienda está online y operativa.</li>
+      <li>Vigencia de la propuesta: 15 días. No incluye traslados ni viáticos.</li>
+    </ul>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="n">+10</div><div class="l">Años</div></div>
+      <div class="stat"><div class="n">+60</div><div class="l">Profesionales</div></div>
+      <div class="stat"><div class="n">+300</div><div class="l">Integraciones</div></div>
+      <div class="stat"><div class="n">+500</div><div class="l">Proyectos</div></div>
+    </div>
+    <p class="agency reveal">Propuesta desarrollada por <b>Wualá</b> · Agencia de eCommerce — wuala.net</p>
   </div>
 </section>
 
@@ -856,16 +908,16 @@ html:not(.js) .reveal{opacity:1;transform:none}
   <div class="wrap">
     <div class="eyebrow reveal" data-n="18"><span class="barline"></span>Costos de Tienda Nube</div>
     <h2 class="headline reveal">Desarrollo y plataforma<br>son <em>cosas distintas</em>.</h2>
-    <p class="lead reveal d1">Tienda Nube es la plataforma sobre la que vive la tienda. Sus costos son propios y se abonan directamente a la plataforma.</p>
+    <p class="lead reveal d1">Tienda Nube es la plataforma sobre la que vive la tienda. Su abono es independiente del servicio de la agencia y se paga directamente a la plataforma.</p>
 
     <div class="tn-grid">
-      <div class="tn-item reveal"><div class="t">Plan</div><div class="v"><span class="ph">A confirmar</span></div><div class="d">Plan de Tienda Nube según necesidades.</div></div>
-      <div class="tn-item reveal d1"><div class="t">Costo mensual</div><div class="v"><span class="ph">A confirmar</span></div><div class="d">Abono de la plataforma.</div></div>
-      <div class="tn-item reveal d2"><div class="t">Medios de pago</div><div class="v"><span class="ph">A confirmar</span></div><div class="d">Comisiones según el medio.</div></div>
-      <div class="tn-item reveal d3"><div class="t">Costos asociados</div><div class="v"><span class="ph">A confirmar</span></div><div class="d">Apps o servicios adicionales.</div></div>
-      <div class="tn-item reveal d4"><div class="t">Envíos</div><div class="v"><span class="ph">A confirmar</span></div><div class="d">Según logística y destino.</div></div>
+      <div class="tn-item reveal"><div class="t">Plan</div><div class="v">Plan Escala</div><div class="d">Plan de Tienda Nube contemplado para el proyecto.</div></div>
+      <div class="tn-item reveal d1"><div class="t">Costo mensual</div><div class="v">$26.999</div><div class="d">Abono mensual de la plataforma.</div></div>
+      <div class="tn-item reveal d2"><div class="t">Costo por transacción</div><div class="v">+ 2% CPT</div><div class="d">Sobre medios de pago que no sean Pago Nube.</div></div>
+      <div class="tn-item reveal d3"><div class="t">Medios de pago</div><div class="v">1 configurado</div><div class="d">Con Pago Nube se evita el 2% adicional.</div></div>
+      <div class="tn-item reveal d4"><div class="t">Medios de envío</div><div class="v">1 configurado</div><div class="d">Según logística y destino.</div></div>
     </div>
-    <p class="note reveal">Se utilizarán únicamente valores vigentes y previamente validados para Vivalto. Mientras no estén confirmados, se muestran como campos a completar — no se estiman precios.</p>
+    <p class="note reveal">El servicio mensual de la agencia no incluye los costos ni las condiciones del servicio mensual de Tienda Nube. Los valores de la plataforma están sujetos a Tienda Nube.</p>
   </div>
 </section>
 
@@ -875,15 +927,43 @@ html:not(.js) .reveal{opacity:1;transform:none}
     <div class="eyebrow" data-n="19"><span class="barline"></span>¿Qué incluye el proyecto?</div>
     <h2 class="headline reveal">El alcance, <em>de punta a punta</em>.</h2>
 
+    <p class="lead reveal d1">Diseño e implementación web en Tienda Nube, con la identidad de Vivalto.</p>
+
     <div class="scope">
-      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">✎</div><b style="color:var(--ink)">Diseño</b><span style="color:var(--ink-soft)">Identidad visual adaptada a Vivalto.</span></div>
-      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">⚙</div><b style="color:var(--ink)">Desarrollo</b><span style="color:var(--ink-soft)">Configuración de Tienda Nube.</span></div>
-      <div class="scope-item reveal d2" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">▤</div><b style="color:var(--ink)">Catálogo</b><span style="color:var(--ink-soft)">Estructuración y carga de productos.</span></div>
-      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">$</div><b style="color:var(--ink)">Pagos</b><span style="color:var(--ink-soft)">Configuración de medios de pago.</span></div>
-      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">✈</div><b style="color:var(--ink)">Envíos</b><span style="color:var(--ink-soft)">Configuración de opciones logísticas.</span></div>
-      <div class="scope-item reveal d2" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">✓</div><b style="color:var(--ink)">Testing</b><span style="color:var(--ink-soft)">Prueba integral del proceso de compra.</span></div>
-      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">▲</div><b style="color:var(--ink)">Lanzamiento</b><span style="color:var(--ink-soft)">Puesta en producción.</span></div>
-      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">◎</div><b style="color:var(--ink)">Capacitación</b><span style="color:var(--ink-soft)">Para administrar la tienda de forma autónoma.</span></div>
+      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">✎</div><b style="color:var(--ink)">Diseño</b><span style="color:var(--ink-soft)">Plantilla prediseñada, adaptada a la identidad de Vivalto.</span></div>
+      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">❐</div><b style="color:var(--ink)">Páginas estáticas</b><span style="color:var(--ink-soft)">Hasta 3 páginas (Quiénes somos, etc.).</span></div>
+      <div class="scope-item reveal d2" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">▦</div><b style="color:var(--ink)">Página principal</b><span style="color:var(--ink-soft)">1 contenedor de banners + 2 bloques destacados, lanzamientos y ofertas.</span></div>
+      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">$</div><b style="color:var(--ink)">Medios de pago</b><span style="color:var(--ink-soft)">1 medio de pago configurado.</span></div>
+      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">✈</div><b style="color:var(--ink)">Medios de envío</b><span style="color:var(--ink-soft)">1 medio de envío configurado.</span></div>
+      <div class="scope-item reveal d2" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">⤒</div><b style="color:var(--ink)">Carga de productos</b><span style="color:var(--ink-soft)">Carga masiva de hasta 100 artículos.</span></div>
+      <div class="scope-item reveal" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">◎</div><b style="color:var(--ink)">Capacitación</b><span style="color:var(--ink-soft)">2 hs para administrar la tienda de forma autónoma.</span></div>
+      <div class="scope-item reveal d1" style="background:#fff;border-color:rgba(36,24,17,.1)"><div class="ic" style="color:var(--crema-deep)">◷</div><b style="color:var(--ink)">Implementación</b><span style="color:var(--ink-soft)">Tiempo estimado: 30 a 45 días.</span></div>
+    </div>
+
+    <div class="eyebrow reveal" style="margin-top:56px;color:var(--crema-deep)"><span class="barline"></span>El acompañamiento mensual incluye · Plan Estratégico 8 hs</div>
+    <div class="plan8">
+      <div class="reveal">
+        <div class="h4">Fase 1 · Puesta en producción</div>
+        <ul>
+          <li>Validación del catálogo</li>
+          <li>Revisión de banners, enlaces y CTA</li>
+          <li>Validación del circuito de compra</li>
+          <li>Revisión de landings reglamentarias</li>
+          <li>Configuraciones pendientes</li>
+          <li>Pase a dominio definitivo</li>
+        </ul>
+      </div>
+      <div class="reveal d1">
+        <div class="h4">Fase 2 · Acompañamiento en producción</div>
+        <ul>
+          <li>Informes de tráfico, conversión e interacción</li>
+          <li>Análisis de oportunidades de mejora UX</li>
+          <li>Implementación de hasta 2 mejoras mensuales</li>
+          <li>Corrección de errores funcionales</li>
+          <li>Atención telefónica directa y reuniones on demand</li>
+          <li>Guardia para urgencias vía WhatsApp</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -948,6 +1028,7 @@ html:not(.js) .reveal{opacity:1;transform:none}
 <footer class="foot">
   <span class="logo-mark on-light" role="img" aria-label="Logo Vivalto" style="width:170px"></span>
   <p>Propuesta comercial · Desarrollo de e-commerce en Tienda Nube · Objetivo de lanzamiento Enero / Febrero 2027</p>
+  <p style="margin-top:6px">Desarrollada por <strong style="color:var(--crema-deep)">Wualá</strong> · Agencia de eCommerce — wuala.net</p>
 </footer>
 
 <script>
