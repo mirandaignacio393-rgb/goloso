@@ -331,6 +331,12 @@
   .detail-cta p{color:var(--ink);font-size:.95rem;margin-top:.25rem;}
   body.detail-mode #home-view{display:none;}
   @media (max-width:520px){ .detail-cta{flex-direction:column;align-items:flex-start;} }
+  .sub-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));align-items:start;}
+  .sc-ben{list-style:none;margin:.75rem 0 0;display:flex;flex-direction:column;gap:.35rem;}
+  .sc-ben li{position:relative;padding-left:1.25em;font-size:.85rem;color:var(--ink);line-height:1.4;}
+  .sc-ben li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--green-3);}
+  .sc-ideal{margin-top:.95rem;padding-top:.8rem;border-top:1px solid var(--line-soft);font-size:.82rem;color:var(--muted);line-height:1.45;}
+  .sc-ideal span{display:block;font-weight:700;color:var(--green-2);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;margin-bottom:.25rem;}
 </style>
 </head>
 <body>
@@ -654,35 +660,15 @@
   var BACK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
   var LEAF='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 7 5 12 12 22 19 12 17 7 12 2Z"/></svg>';
   var LOTUS='<svg><use href="#lotus"/></svg>';
-  var SERVICES={
-    'masaje-corporal':{name:'Masaje corporal',intro:'Terapias manuales para liberar tensiones, mejorar la circulación y reconectar con tu bienestar.',items:[
-      {n:'Masaje descontracturante',d:'Alivia tensiones y nudos musculares de espalda, cuello y hombros.'},
-      {n:'Masaje relajante / anti-stress',d:'Maniobras suaves que relajan cuerpo y mente.'},
-      {n:'Drenaje linfático manual',d:'Estimula la circulación y ayuda a reducir la retención de líquidos.'},
-      {n:'Masaje con piedras calientes',d:'Calor y presión para una relajación profunda.'},
-      {n:'Masaje deportivo',d:'Preparación y recuperación muscular.'}
-    ]},
-    'tratamiento-facial':{name:'Tratamiento facial',intro:'Cuidamos tu piel con protocolos personalizados para que luzca sana, hidratada y luminosa.',items:[
-      {n:'Limpieza facial profunda',d:'Higiene, extracción e hidratación para una piel renovada.'},
-      {n:'Peeling / renovación',d:'Mejora la textura, las manchas y la luminosidad.'},
-      {n:'Hidratación & Skinbooster',d:'Hidratación profunda y revitalización del rostro.'},
-      {n:'Radiofrecuencia facial',d:'Tensa y reafirma la piel del rostro.'},
-      {n:'Punta de diamante',d:'Microdermoabrasión para renovar la superficie de la piel.'}
-    ]},
-    'tratamiento-corporal':{name:'Tratamiento corporal',intro:'Tratamientos para acompañar tus objetivos: depilación, modelado, firmeza y más.',items:[
-      {n:'Depilación definitiva',d:'Láser de última generación para todo tipo de piel.'},
-      {n:'Tratamiento reductor',d:'Modela y reduce el contorno en zonas localizadas.'},
-      {n:'Reafirmante',d:'Mejora la firmeza y la elasticidad de la piel.'},
-      {n:'Anticelulítico',d:'Reduce la apariencia de la celulitis.'},
-      {n:'Radiofrecuencia corporal',d:'Reafirma y estimula la producción de colágeno.'}
-    ]}
-  };
+  var SERVICES={"masaje-corporal": {"name": "Masaje corporal", "intro": "Terapias manuales para liberar tensiones, mejorar la circulación y reconectar con tu bienestar.", "items": [{"n": "Masaje descontracturante", "d": "Alivia tensiones y nudos musculares de espalda, cuello y hombros."}, {"n": "Masaje relajante / anti-stress", "d": "Maniobras suaves que relajan cuerpo y mente."}, {"n": "Drenaje linfático manual", "d": "Estimula la circulación y ayuda a reducir la retención de líquidos."}, {"n": "Masaje con piedras calientes", "d": "Calor y presión para una relajación profunda."}, {"n": "Masaje deportivo", "d": "Preparación y recuperación muscular."}]}, "tratamiento-facial": {"name": "Tratamiento facial", "intro": "Cuidamos tu piel con protocolos personalizados para que luzca sana, hidratada y luminosa.", "items": [{"n": "Limpieza Facial Profunda", "d": "Higiene profunda de la piel: elimina impurezas, células muertas y exceso de oleosidad. Descongestiona los poros y mejora el aspecto general.", "b": ["Limpia profundamente los poros", "Elimina impurezas y células muertas", "Ayuda a controlar el exceso de oleosidad", "Mejora la textura de la piel", "Aporta luminosidad y frescura"], "ideal": "Pieles con impurezas, puntos negros, oleosidad, poros obstruidos o aspecto apagado."}, {"n": "Limpieza Facial · Piel Sensible / Rosácea", "d": "Adaptado a pieles sensibles o con tendencia a la rosácea, con productos y maniobras suaves que cuidan la barrera cutánea.", "b": ["Higieniza la piel de manera suave", "Mantiene el confort de la piel", "Elimina impurezas sin exfoliación agresiva", "Aporta suavidad y luminosidad", "Respeta las pieles sensibles"], "ideal": "Pieles sensibles, reactivas, delicadas o con tendencia al enrojecimiento."}, {"n": "Limpieza Facial + Dermaplaning", "d": "Combina limpieza facial con dermaplaning, una exfoliación superficial que remueve células muertas y vello facial fino.", "b": ["Exfolia suavemente la superficie", "Elimina células muertas y vello facial fino", "Mejora la suavidad y la textura", "Aporta luminosidad", "Favorece la aplicación de productos"], "ideal": "Quienes buscan una piel más suave, luminosa y uniforme."}, {"n": "Limpieza Facial + Radiofrecuencia", "d": "Combina la higiene facial con radiofrecuencia, que genera un calentamiento controlado para estimular colágeno y elastina.", "b": ["Aporta luminosidad", "Atenúa líneas de expresión", "Mejora la apariencia y la textura", "Brinda mayor firmeza", "Deja la piel más suave y revitalizada"], "ideal": "Pieles con falta de luminosidad, pérdida de firmeza o primeros signos de envejecimiento."}, {"n": "Limpieza Facial + Peeling", "d": "Combina limpieza con un peeling químico seleccionado según la piel, favoreciendo la renovación de las capas superficiales.", "b": ["Favorece la renovación celular", "Mejora la textura de la piel", "Aporta luminosidad", "Mejora la apariencia de manchas superficiales", "Piel más uniforme y suave"], "ideal": "Pieles opacas, con textura irregular, manchas superficiales o tendencia a imperfecciones."}, {"n": "Limpieza Facial + Dermapen", "d": "Combina limpieza con Dermapen (microneedling), generando microcanales controlados que favorecen la renovación natural de la piel.", "b": ["Favorece la renovación cutánea", "Mejora progresivamente la textura", "Aporta luminosidad", "Mejora la apariencia de poros y marcas", "Piel de aspecto más uniforme"], "ideal": "Pieles con textura irregular, poros visibles, marcas superficiales o falta de luminosidad."}, {"n": "Limpieza Facial + Dermaplaning + Dermapen", "d": "Tratamiento integral en tres etapas: limpieza, dermaplaning y Dermapen, para renovar la piel y mejorar la absorción de productos.", "b": ["Limpieza profunda de la piel", "Exfoliación superficial", "Elimina células muertas y vello facial fino", "Favorece la renovación de la piel", "Mejora la textura y la luminosidad"], "ideal": "Quienes buscan un tratamiento facial completo para mejorar textura, luminosidad y apariencia general."}, {"n": "Exosomas + Dermapen", "d": "Combina Dermapen con exosomas, vesículas microscópicas que transmiten señales y favorecen la renovación y regeneración de la piel.", "b": ["Mejora la luminosidad y la textura", "Favorece la regeneración celular", "Mejora la firmeza y la elasticidad", "Suaviza la apariencia de líneas finas", "Piel más uniforme, hidratada y revitalizada"], "ideal": "Piel apagada, deshidratada, con textura irregular, líneas finas, marcas de acné, manchas o signos de envejecimiento."}]}, "tratamiento-corporal": {"name": "Tratamiento corporal", "intro": "Aparatología de última generación para tratar grasa localizada, celulitis y firmeza, con planes personalizados.", "items": [{"n": "Vela Velvet Max", "d": "Aparatología que combina 4 tecnologías: radiofrecuencia, masajes con rodillo, infrarrojos y vacumterapia.", "b": ["Trata la grasa localizada", "Reduce la circunferencia corporal", "Mejora el aspecto de la piel"], "ideal": "Grasa localizada y reducción de contorno corporal."}, {"n": "Alpha Synergy corporal", "d": "Tecnología de última generación que combina radiofrecuencia multipolar y vacum-dermo-movilización.", "b": ["Trata la adiposidad localizada", "Trata la celulitis en todos sus estadíos", "Moviliza y reactiva los tejidos"], "ideal": "Adiposidad localizada y celulitis en todos sus estadíos."}, {"n": "Exilis Ultra 360 Corporal", "d": "Aparatología de alta gama que combina radiofrecuencia monopolar y ultrasonido.", "b": ["Tensa la piel", "Reduce la grasa localizada", "Estimula la producción de colágeno y elastina"], "ideal": "Flacidez, grasa localizada y falta de firmeza."}]}};
   var dv=document.getElementById('detail-view');
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function render(slug){
     var s=SERVICES[slug]; if(!s) return false;
     var cards=s.items.map(function(it){
-      return '<article class="sub-card"><div class="sc-ico">'+LEAF+'</div><h3>'+esc(it.n)+'</h3><p>'+esc(it.d)+'</p></article>';
+      var ben=(it.b&&it.b.length)?'<ul class="sc-ben">'+it.b.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'';
+      var ideal=it.ideal?'<div class="sc-ideal"><span>Ideal para</span>'+esc(it.ideal)+'</div>':'';
+      return '<article class="sub-card"><div class="sc-ico">'+LEAF+'</div><h3>'+esc(it.n)+'</h3><p>'+esc(it.d)+'</p>'+ben+ideal+'</article>';
     }).join('');
     dv.innerHTML=
       '<div class="detail-hero"><div class="lotuswm" aria-hidden="true">'+LOTUS+'</div><div class="wrap">'+
