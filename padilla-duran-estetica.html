@@ -347,8 +347,8 @@
   .sc-ben li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--green-3);}
   .sc-ideal{margin-top:.95rem;padding-top:.8rem;border-top:1px solid var(--line-soft);font-size:.82rem;color:var(--muted);line-height:1.45;}
   .sc-ideal span{display:block;font-weight:700;color:var(--green-2);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;margin-bottom:.25rem;}
-  .result-photo{aspect-ratio:auto;}
-  .result-photo img{height:auto;}
+  .result-photo{aspect-ratio:16/9;background:#fff;}
+  .result-photo img{height:100%;object-fit:contain;}
   .results-2{grid-template-columns:repeat(2,1fr);max-width:920px;margin-left:auto;margin-right:auto;}
   @media (max-width:720px){ .results-2{grid-template-columns:1fr;} }
 </style>
